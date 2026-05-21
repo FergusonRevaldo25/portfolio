@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ferguson Revaldo | Auth System Portfolio | Neumorphism</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: #e0e5ec;
+        padding: 40px 20px;
+      }
+
+      /* NEUMORPHISM BASE STYLES */
+      .neu-shadow {
+        background: #e0e5ec;
+        box-shadow:
+          9px 9px 16px #a3b1c6,
+          -9px -9px 16px #ffffff;
+        border-radius: 30px;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        background: #e0e5ec;
+        box-shadow:
+          12px 12px 20px #a3b1c6,
+          -12px -12px 20px #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        font-size: 3.5rem;
+        color: #4a6fa5;
+        transition: 0.3s;
+      }
+
+      .avatar:hover {
+        box-shadow:
+          inset 12px 12px 20px #a3b1c6,
+          inset -12px -12px 20px #ffffff;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .header h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #4a6fa5, #6b8cae);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+        color: #6b8cae;
+        letter-spacing: 2px;
+        font-weight: 500;
+      }
+
+      /* PROJECT GRID */
+      .projects-grid {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 35px;
+      }
+
+      .project-card {
+        background: #e0e5ec;
+        box-shadow:
+          12px 12px 24px #a3b1c6,
+          -12px -12px 24px #ffffff;
+        border-radius: 40px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow:
+          18px 18px 32px #a3b1c6,
+          -18px -18px 32px #ffffff;
+      }
+
+      .project-1 .project-icon {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        box-shadow:
+          8px 8px 16px #a3b1c6,
+          -8px -8px 16px #ffffff;
+      }
+
+      .project-2 .project-icon {
+        background: linear-gradient(135deg, #560cdb, #bd2eea);
+        box-shadow:
+          8px 8px 16px #a3b1c6,
+          -8px -8px 16px #ffffff;
+      }
+
+      .project-3 .project-icon {
+        background: linear-gradient(135deg, #ff3366, #ff6b6b);
+        box-shadow:
+          8px 8px 16px #a3b1c6,
+          -8px -8px 16px #ffffff;
+      }
+
+      .project-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .project-number {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 3rem;
+        font-weight: 800;
+        opacity: 0.08;
+        color: #4a6fa5;
+      }
+
+      .project-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 12px;
+      }
+
+      .project-badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 15px 0;
+      }
+
+      .badge {
+        background: #e0e5ec;
+        box-shadow:
+          inset 2px 2px 4px #a3b1c6,
+          inset -2px -2px 4px #ffffff;
+        padding: 5px 14px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #4a6fa5;
+        border-radius: 20px;
+        letter-spacing: 0.5px;
+      }
+
+      .project-description {
+        color: #5a6e85;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin: 15px 0;
+      }
+
+      .project-features {
+        list-style: none;
+        margin: 15px 0;
+      }
+
+      .project-features li {
+        color: #5a6e85;
+        font-size: 0.75rem;
+        padding: 6px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .project-features li i {
+        color: #4a6fa5;
+        width: 18px;
+        font-size: 0.75rem;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .btn {
+        flex: 1;
+        padding: 12px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        border-radius: 30px;
+      }
+
+      .btn-primary {
+        background: #e0e5ec;
+        box-shadow:
+          6px 6px 12px #a3b1c6,
+          -6px -6px 12px #ffffff;
+        color: #4a6fa5;
+      }
+
+      .btn-primary:hover {
+        box-shadow:
+          inset 4px 4px 8px #a3b1c6,
+          inset -4px -4px 8px #ffffff;
+        color: #2c3e50;
+      }
+
+      .btn-secondary {
+        background: #e0e5ec;
+        box-shadow:
+          inset 3px 3px 6px #a3b1c6,
+          inset -3px -3px 6px #ffffff;
+        color: #6b8cae;
+      }
+
+      .btn-secondary:hover {
+        box-shadow:
+          6px 6px 12px #a3b1c6,
+          -6px -6px 12px #ffffff;
+        color: #4a6fa5;
+      }
+
+      /* STATS SECTION */
+      .stats-section {
+        max-width: 1300px;
+        margin: 60px auto 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        text-align: center;
+      }
+
+      .stat-card {
+        background: #e0e5ec;
+        box-shadow:
+          10px 10px 20px #a3b1c6,
+          -10px -10px 20px #ffffff;
+        border-radius: 30px;
+        padding: 25px 20px;
+        transition: 0.3s;
+      }
+
+      .stat-card:hover {
+        box-shadow:
+          inset 8px 8px 16px #a3b1c6,
+          inset -8px -8px 16px #ffffff;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #4a6fa5, #6b8cae);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .stat-label {
+        font-size: 0.7rem;
+        color: #6b8cae;
+        letter-spacing: 2px;
+        font-weight: 600;
+        margin-top: 8px;
+      }
+
+      /* FOOTER */
+      .footer {
+        text-align: center;
+        margin-top: 60px;
+        padding: 30px;
+        background: #e0e5ec;
+        box-shadow:
+          inset 4px 4px 8px #a3b1c6,
+          inset -4px -4px 8px #ffffff;
+        border-radius: 30px;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .footer p {
+        color: #6b8cae;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        color: #4a6fa5;
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #e0e5ec;
+        padding: 10px 20px;
+        border-radius: 50px;
+        box-shadow:
+          6px 6px 12px #a3b1c6,
+          -6px -6px 12px #ffffff;
+      }
+
+      .social-links a:hover {
+        box-shadow:
+          inset 4px 4px 8px #a3b1c6,
+          inset -4px -4px 8px #ffffff;
+        transform: translateY(-2px);
+        color: #2c3e50;
+      }
+
+      .social-links a i {
+        font-size: 1.2rem;
+      }
+
+      .social-links a span {
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .avatar {
+          width: 90px;
+          height: 90px;
+          font-size: 2.5rem;
+        }
+
+        .stats-section {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .social-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .social-links a {
+          padding: 8px 16px;
+          width: 80%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="avatar">
+        <i class="fa-solid fa-laptop-code"></i>
+      </div>
+      <h1>FERGUSON REVALDO</h1>
+      <div class="subtitle">✦ AUTHENTICATION SYSTEMS PORTFOLIO ✦</div>
+    </div>
+
+    <div class="projects-grid">
+      <!-- PROJECT 1: Glass Morphic Auth System -->
+      <div class="project-card project-1">
+        <div class="project-number">01</div>
+        <div class="project-icon">
+          <i class="fa-solid fa-glass-water"></i>
+        </div>
+        <h3 class="project-title">Glass Morphic Auth</h3>
+        <div class="project-badges">
+          <span class="badge">BEHAVIORAL CAPTCHA</span>
+          <span class="badge">2FA</span>
+          <span class="badge">PASSWORD STRENGTH</span>
+        </div>
+        <p class="project-description">
+          Modern authentication with glass morphic design, animated hue-rotating
+          background, and behavioral CAPTCHA that tracks mouse movements and
+          human interaction patterns.
+        </p>
+        <ul class="project-features">
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Behavioral CAPTCHA (mouse
+            tracking)
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Two-Factor Authentication
+            UI
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Password strength meter
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Glass morphic design
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Hue-rotating background
+          </li>
+        </ul>
+        <div class="btn-group">
+          <a
+            href="https://fergusonrevaldo25.github.io/auth-system"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            <i class="fa-solid fa-eye"></i> LIVE DEMO
+          </a>
+          <a
+            href="https://github.com/FergusonRevaldo25/auth-system"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            <i class="fa-brands fa-github"></i> SOURCE
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Split-Screen Login with Turnstile -->
+      <div class="project-card project-2">
+        <div class="project-number">02</div>
+        <div class="project-icon">
+          <i class="fa-solid fa-split"></i>
+        </div>
+        <h3 class="project-title">Split-Screen Login</h3>
+        <div class="project-badges">
+          <span class="badge">CLOUDFLARE TURNSTILE</span>
+          <span class="badge">SPLIT SCREEN</span>
+          <span class="badge">PURPLE THEME</span>
+        </div>
+        <p class="project-description">
+          50/50 split-screen design with custom background and Cloudflare
+          Turnstile CAPTCHA integration. Color-matched to the image for seamless
+          visual harmony.
+        </p>
+        <ul class="project-features">
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Cloudflare Turnstile
+            CAPTCHA
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Split-screen layout
+            (50/50)
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Purple color scheme
+            matched to image
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Password strength meter
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Social login buttons
+          </li>
+        </ul>
+        <div class="btn-group">
+          <a
+            href="https://fergusonrevaldo25.github.io/split-login"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            <i class="fa-solid fa-eye"></i> LIVE DEMO
+          </a>
+          <a
+            href="https://github.com/FergusonRevaldo25/split-login"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            <i class="fa-brands fa-github"></i> SOURCE
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Neo-Brutalist Gamified Login -->
+      <div class="project-card project-3">
+        <div class="project-number">03</div>
+        <div class="project-icon">
+          <i class="fa-solid fa-gamepad"></i>
+        </div>
+        <h3 class="project-title">Neo-Brutalist Gamified</h3>
+        <div class="project-badges">
+          <span class="badge">GAMIFIED</span>
+          <span class="badge">XP SYSTEM</span>
+          <span class="badge">COMBO MECHANIC</span>
+        </div>
+        <p class="project-description">
+          Bold, edgy authentication with gaming mechanics. Earn XP, build
+          combos, level up, and battle CAPTCHAs in an arena-style interface.
+        </p>
+        <ul class="project-features">
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> XP Bar & Leveling System
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Combo counter (chain
+            actions for bonus)
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> HP system (wrong answers
+            damage you)
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Neo-brutalist design
+          </li>
+          <li>
+            <i class="fa-solid fa-chevron-right"></i> Icon-based CAPTCHA battle
+          </li>
+        </ul>
+        <div class="btn-group">
+          <a
+            href="https://fergusonrevaldo25.github.io/neo-brutalist-login"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            <i class="fa-solid fa-eye"></i> LIVE DEMO
+          </a>
+          <a
+            href="https://github.com/FergusonRevaldo25/neo-brutalist-login"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            <i class="fa-brands fa-github"></i> SOURCE
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS SECTION -->
+    <div class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">COMPLETE PROJECTS</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">VANILLA JS</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">DIFFERENT CAPTCHAS</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">FEATURES TOTAL</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>✦ BUILT WITH NEUMORPHISM BY FERGUSON REVALDO ✦</p>
+      <p style="margin-top: 8px; font-size: 0.7rem">
+        Authentication Systems Portfolio — All projects are fully responsive and
+        use pure HTML/CSS/JS
+      </p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/revaldo-ferguson-45b98321b/"
+          target="_blank"
+        >
+          <i class="fa-brands fa-linkedin-in"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://www.instagram.com/fergusonrevaldo" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://github.com/FergusonRevaldo25" target="_blank">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
