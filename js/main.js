@@ -164,7 +164,7 @@ function attachConfettiToProjects() {
   });
 }
 
-// ========== TYPING ANIMATION ==========
+// ========== TYPING ANIMATION WITH FULL SLIDE EFFECT ==========
 const words = [
   "Code of Bushido ⚔️",
   "Way of the Warrior 🗡️",
@@ -177,9 +177,16 @@ let wordIndex = 0,
   isDeleting = false;
 const typingEl = document.getElementById("typing-text");
 
+// Style the typing element for smooth transitions
+if (typingEl) {
+  typingEl.style.display = "inline-block";
+  typingEl.style.transition = "transform 0.3s ease, opacity 0.3s ease";
+}
+
 function typeEffect() {
   if (!typingEl) return;
   const current = words[wordIndex];
+
   if (isDeleting) {
     typingEl.textContent = current.substring(0, charIndex - 1);
     charIndex--;
@@ -188,19 +195,45 @@ function typeEffect() {
     charIndex++;
   }
 
+  // When word is fully typed - add pop effect
   if (!isDeleting && charIndex === current.length) {
+    typingEl.style.transform = "scale(1.08)";
+    typingEl.style.opacity = "0.9";
+    setTimeout(() => {
+      typingEl.style.transform = "scale(1)";
+      typingEl.style.opacity = "1";
+    }, 150);
+
     isDeleting = true;
     setTimeout(typeEffect, 2000);
     return;
   }
 
+  // When word is fully deleted - slide in next word from right
   if (isDeleting && charIndex === 0) {
     isDeleting = false;
     wordIndex = (wordIndex + 1) % words.length;
+
+    // Add slide-in animation
+    typingEl.style.transform = "translateX(30px)";
+    typingEl.style.opacity = "0";
+    setTimeout(() => {
+      typingEl.style.transform = "translateX(0)";
+      typingEl.style.opacity = "1";
+    }, 50);
   }
-  setTimeout(typeEffect, isDeleting ? 80 : 120);
+
+  const speed = isDeleting ? 60 : 100;
+  setTimeout(typeEffect, speed);
 }
-if (typingEl) typeEffect();
+
+// Start typing effect
+setTimeout(() => {
+  if (typingEl) {
+    typingEl.style.opacity = "1";
+    typeEffect();
+  }
+}, 300);
 
 // ========== SKILL BARS ==========
 function animateSkillBars() {
@@ -367,7 +400,7 @@ if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
   };
 }
 
-// ========== REAL YEAT MUSIC PLAYER - 3 SONGS ==========
+// ========== YEAT MUSIC PLAYER - 3 SONGS ==========
 const yeatToggle = document.getElementById("yeatToggle");
 const yeatVolume = document.getElementById("yeatVolume");
 const yeatSongName = document.getElementById("yeatSongName");
@@ -375,7 +408,6 @@ const yeatAudioPlayer = document.getElementById("yeatAudioPlayer");
 let isYeatPlaying = false;
 let currentSong = 1;
 
-// Your 3 Yeat songs
 const yeatSongs = {
   1: {
     name: "🎤 Yeat - Nun id change",
@@ -391,22 +423,15 @@ const yeatSongs = {
 function loadYeatSong(songId) {
   const song = yeatSongs[songId];
   if (!song) return;
-
   yeatAudioPlayer.src = `assets/music/${song.file}`;
   yeatAudioPlayer.volume = yeatVolume ? parseFloat(yeatVolume.value) : 0.5;
   yeatAudioPlayer.loop = true;
-
   if (yeatSongName) yeatSongName.textContent = song.name;
   currentSong = songId;
-
-  if (isYeatPlaying) {
-    yeatAudioPlayer.play().catch((e) => console.log("Click YEAT to play"));
-  }
 }
 
 function playYeatMusic() {
   if (!yeatAudioPlayer) return;
-
   yeatAudioPlayer
     .play()
     .then(() => {
@@ -415,9 +440,7 @@ function playYeatMusic() {
       speakMessage(`🎵 Yeat mode: ${yeatSongs[currentSong].name} 🐍`);
       startYeatLyrics();
     })
-    .catch((err) => {
-      speakMessage("🎵 Click YEAT button again!");
-    });
+    .catch((err) => speakMessage("🎵 Click YEAT button again!"));
 }
 
 function pauseYeatMusic() {
@@ -432,14 +455,8 @@ function pauseYeatMusic() {
 
 if (yeatToggle) {
   yeatToggle.addEventListener("click", () => {
-    if (isYeatPlaying) {
-      pauseYeatMusic();
-    } else {
-      if (!yeatAudioPlayer.src) {
-        loadYeatSong(1);
-      }
-      playYeatMusic();
-    }
+    if (isYeatPlaying) pauseYeatMusic();
+    else playYeatMusic();
   });
 }
 
@@ -449,23 +466,17 @@ if (yeatVolume) {
   });
 }
 
-// Song selection buttons - NOW WITH 3 SONGS
 document.querySelectorAll(".yeat-song-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const songId = parseInt(btn.dataset.song);
     loadYeatSong(songId);
-    if (isYeatPlaying) {
-      yeatAudioPlayer.play();
-      speakMessage(`🎵 Now playing: ${yeatSongs[songId].name}`);
-    } else {
-      playYeatMusic();
-    }
+    if (isYeatPlaying) yeatAudioPlayer.play();
+    else playYeatMusic();
     btn.style.transform = "scale(1.1)";
     setTimeout(() => (btn.style.transform = "scale(1)"), 200);
   });
 });
 
-// Load default song on page load
 loadYeatSong(1);
 
 let lyricsInterval = null;
@@ -475,7 +486,6 @@ const yeatLyrics = [
   "🎤 Bëttr 0ff without them",
   "🔥 If we being rëal, I'm the one",
   "💎 Yeat, yeat, yeat",
-  "🤘 Out thë way, out thë way",
 ];
 
 function startYeatLyrics() {
@@ -492,9 +502,8 @@ function startYeatLyrics() {
       ) {
         speechBubble.textContent = `🎤 ${randomLyric}`;
         setTimeout(() => {
-          if (speechBubble.textContent.includes("🎤")) {
+          if (speechBubble.textContent.includes("🎤"))
             speechBubble.textContent = "👋 Yo! Click a tab!";
-          }
         }, 4000);
       }
     }
@@ -508,12 +517,38 @@ function stopYeatLyrics() {
   }
 }
 
-// ========== PROPER TWO-STEP WALKING AVATAR - STAYS WHERE HE WALKS ==========
+// ========== BACKGROUND VIDEO CONTROL ==========
+const bgVideo = document.getElementById("bgVideo");
+let videoPlaying = true;
+
+if (bgVideo) {
+  const videoBtn = document.createElement("button");
+  videoBtn.innerHTML = "🎬 VIDEO ON";
+  videoBtn.className = "video-toggle";
+  videoBtn.id = "videoToggle";
+  document.body.appendChild(videoBtn);
+
+  videoBtn.addEventListener("click", () => {
+    if (videoPlaying) {
+      bgVideo.pause();
+      videoBtn.innerHTML = "🎬 VIDEO OFF";
+      videoPlaying = false;
+      speakMessage("🎬 Background video paused");
+    } else {
+      bgVideo.play();
+      videoBtn.innerHTML = "🎬 VIDEO ON";
+      videoPlaying = true;
+      speakMessage("🎬 Background video playing");
+    }
+  });
+
+  bgVideo.play().catch((e) => console.log("Click anywhere to play video"));
+}
+
+// ========== PROPER TWO-STEP WALKING AVATAR ==========
 const avatarContainer = document.getElementById("avatarContainer");
 const avatarCharacter = document.getElementById("avatarCharacter");
 let isMoving = false;
-let stepInterval = null;
-let currentStep = 0;
 let stepPositions = [];
 let stepCycle = 0;
 
@@ -529,27 +564,19 @@ function takeStep(x, y, legSide) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / stepDuration, 1);
       const easeProgress = 1 - Math.pow(1 - progress, 2);
-
       const currentX = startX + (x - startX) * easeProgress;
       const currentY = startY + (y - startY) * easeProgress;
       const bounce = Math.sin(progress * Math.PI) * 10;
-
       avatarContainer.style.left = currentX + "px";
       avatarContainer.style.top = currentY - bounce + "px";
-
       if (legs.length >= 2) {
-        if (legSide === "left") {
-          legs[0].style.transform = "rotate(25deg)";
-          legs[1].style.transform = "rotate(-10deg)";
-        } else {
-          legs[0].style.transform = "rotate(-10deg)";
-          legs[1].style.transform = "rotate(25deg)";
-        }
+        legs[0].style.transform =
+          legSide === "left" ? "rotate(25deg)" : "rotate(-10deg)";
+        legs[1].style.transform =
+          legSide === "left" ? "rotate(-10deg)" : "rotate(25deg)";
       }
-
-      if (progress < 1) {
-        requestAnimationFrame(animateStep);
-      } else {
+      if (progress < 1) requestAnimationFrame(animateStep);
+      else {
         if (legs.length >= 2) {
           legs[0].style.transform = "rotate(0deg)";
           legs[1].style.transform = "rotate(0deg)";
@@ -557,7 +584,6 @@ function takeStep(x, y, legSide) {
         resolve();
       }
     }
-
     requestAnimationFrame(animateStep);
   });
 }
@@ -566,19 +592,15 @@ async function walkToElement(targetElement) {
   if (isMoving) return;
   isMoving = true;
   stepCycle = 0;
-
   const avatarRect = avatarContainer.getBoundingClientRect();
   const targetRect = targetElement.getBoundingClientRect();
-
   const startX = avatarRect.left;
   const startY = avatarRect.top;
   const endX = targetRect.left + targetRect.width / 2 - avatarRect.width / 2;
   const endY = targetRect.top - 70;
-
   const distanceX = endX - startX;
   const distanceY = endY - startY;
   const stepsCount = Math.max(8, Math.ceil(Math.abs(distanceX) / 30));
-
   stepPositions = [];
   for (let i = 1; i <= stepsCount; i++) {
     const t = i / stepsCount;
@@ -588,14 +610,12 @@ async function walkToElement(targetElement) {
       y: startY + distanceY * ease,
     });
   }
-
   avatarContainer.style.position = "fixed";
   avatarContainer.style.right = "auto";
   avatarContainer.style.bottom = "auto";
   avatarContainer.style.left = startX + "px";
   avatarContainer.style.top = startY + "px";
   avatarCharacter.classList.add("walking");
-
   const walkMessages = [
     "👋 Let's go!",
     "⚔️ On my way!",
@@ -607,37 +627,29 @@ async function walkToElement(targetElement) {
   if (speech)
     speech.textContent =
       walkMessages[Math.floor(Math.random() * walkMessages.length)];
-
   for (let i = 0; i < stepPositions.length; i++) {
     const step = stepPositions[i];
     const legSide = stepCycle % 2 === 0 ? "left" : "right";
     await takeStep(step.x, step.y, legSide);
     stepCycle++;
   }
-
   avatarCharacter.classList.remove("walking");
-
   const legs = document.querySelectorAll(".avatar-leg");
   if (legs.length >= 2) {
     legs[0].style.transform = "rotate(0deg)";
     legs[1].style.transform = "rotate(0deg)";
   }
-
   if (speech) speech.textContent = "✨ PRESSED! ✨";
-
   avatarContainer.style.transform = "scale(0.95)";
   setTimeout(() => {
     avatarContainer.style.transform = "scale(1)";
   }, 100);
   triggerVictoryConfetti();
-
-  // AVATAR STAYS HERE - DOES NOT RETURN TO CORNER
   setTimeout(() => {
     if (speech) speech.textContent = "👋 I stay here now!";
     setTimeout(() => {
-      if (speech && speech.textContent === "👋 I stay here now!") {
+      if (speech && speech.textContent === "👋 I stay here now!")
         speech.textContent = "👋 Yo! Click another tab!";
-      }
     }, 2000);
     isMoving = false;
   }, 400);
@@ -693,7 +705,6 @@ const bloodCanvas = document.getElementById("bloodMoonCanvas");
 if (bloodCanvas) {
   const ctx = bloodCanvas.getContext("2d");
   let particles = [];
-
   function initParticles() {
     bloodCanvas.width = window.innerWidth;
     bloodCanvas.height = window.innerHeight;
@@ -708,7 +719,6 @@ if (bloodCanvas) {
       });
     }
   }
-
   function draw() {
     if (!ctx) return;
     ctx.clearRect(0, 0, bloodCanvas.width, bloodCanvas.height);
@@ -722,7 +732,6 @@ if (bloodCanvas) {
     });
     requestAnimationFrame(draw);
   }
-
   initParticles();
   draw();
   window.addEventListener("resize", () => initParticles());
@@ -755,12 +764,10 @@ document.addEventListener("mousemove", (e) => {
 const ring = document.createElement("div");
 ring.className = "cursor-ring";
 document.body.appendChild(ring);
-
 document.addEventListener("mousemove", (e) => {
   ring.style.left = e.clientX + "px";
   ring.style.top = e.clientY + "px";
 });
-
 document
   .querySelectorAll(
     "a, button, .btn, .project-card, .filter, .samurai-btn, .yeat-btn",
@@ -843,12 +850,12 @@ window.addEventListener("load", () => {
   updateCarousel();
   attachWalkingListeners();
 
-  console.log("⚔️ SAMURAI PORTFOLIO ACTIVATED ⚔️");
+  console.log("⚔️ SAMURAI YEAT PORTFOLIO ACTIVATED ⚔️");
+  console.log("🎬 Yeat music video playing in background!");
   console.log("🎵 3 YEAT SONGS: Nun id change, Bëttr 0ff, If We Being Rëal");
-  console.log("👆 Click the YEAT button to play music!");
   console.log("👆 Click any tab - the samurai walks AND STAYS THERE!");
 
-  speakMessage("⚔️ Samurai ready! 3 Yeat songs loaded! 🐍");
+  speakMessage("⚔️ Samurai ready! Yeat video playing in background! 🐍");
 });
 
 window.addEventListener("scroll", () => {

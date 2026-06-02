@@ -25,6 +25,30 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Background Video - Yeat Music Video -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      id="bgVideo"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+        opacity: 0.3;
+      "
+    >
+      <source
+        src="assets/Yeat - COMË N GO (Official Music Video).mp4"
+        type="video/mp4"
+      />
+    </video>
+
     <div class="samurai-bg"></div>
     <canvas
       id="bloodMoonCanvas"
@@ -35,7 +59,7 @@
         width: 100%;
         height: 100%;
         pointer-events: none;
-        z-index: 0;
+        z-index: -1;
       "
     ></canvas>
 
@@ -67,7 +91,10 @@
             <span class="tag">YEAT SAMURAI - FULL STACK WARRIOR</span>
             <span class="katana-icon">⚔️</span>
           </div>
-          <h1>I walk the <span id="typing-text" class="typing"></span></h1>
+          <h1 class="hero-heading">
+            <span class="hero-heading-text">I walk the</span>
+            <span id="typing-text" class="typing"></span>
+          </h1>
           <div class="samurai-quote">
             「Code is the sword, Yeat is the vibe, spirit is the steel」
           </div>

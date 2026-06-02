@@ -16,6 +16,46 @@ body {
   position: relative;
 }
 
+/* Background Video */
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.3;
+  filter: brightness(0.6) blur(3px);
+  transition: opacity 0.5s ease;
+}
+
+/* Video Toggle Button */
+.video-toggle {
+  position: fixed;
+  bottom: 120px;
+  left: 20px;
+  z-index: 1001;
+  background: rgba(220, 20, 60, 0.8);
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.video-toggle:hover {
+  background: #dc143c;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(220, 20, 60, 0.5);
+}
+
 .samurai-bg {
   position: fixed;
   top: 0;
@@ -30,7 +70,7 @@ body {
     transparent 8px
   );
   pointer-events: none;
-  z-index: -2;
+  z-index: -1;
 }
 
 .samurai-bg::before {
@@ -147,11 +187,129 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* ========== HERO SECTION WITH SLIDE ANIMATIONS ========== */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   padding: 4rem 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes textPop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-content {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.hero .samurai-divider {
+  animation: fadeInScale 0.5s ease-out forwards;
+}
+
+.hero h1 {
+  animation: slideInRight 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.hero .samurai-quote {
+  animation: slideInUp 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.hero p {
+  animation: slideInLeft 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.hero .buttons {
+  animation: slideInUp 0.5s ease-out 0.5s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.hero .stats {
+  animation: fadeInScale 0.5s ease-out 0.7s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.hero-image {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.typing {
+  display: inline-block;
+  border-right: 3px solid #dc143c;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: #dc143c;
+  }
+  50% {
+    border-color: transparent;
+  }
 }
 
 .hero h1 {
@@ -540,17 +698,7 @@ footer {
   visibility: visible;
 }
 
-.typing {
-  border-right: 3px solid #dc143c;
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
+/* Yeat Music Player */
 .yeat-music-player {
   position: fixed;
   bottom: 20px;
@@ -656,7 +804,7 @@ footer {
   margin-top: 5px;
 }
 
-/* Avatar Container - Stays where he walks */
+/* Avatar */
 .avatar-container {
   position: fixed;
   bottom: auto;
@@ -711,6 +859,20 @@ footer {
   position: relative;
 }
 
+.avatar-character.walking .avatar-body {
+  animation: bodyBounce 0.3s ease infinite;
+}
+
+@keyframes bodyBounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
 .avatar-body {
   width: 50px;
   height: 55px;
@@ -719,7 +881,6 @@ footer {
   position: relative;
   margin: 0 auto;
   border: 1px solid #dc143c;
-  transition: transform 0.05s ease;
 }
 
 .avatar-face {
@@ -787,21 +948,6 @@ footer {
   border: 1px solid #dc143c;
   transition: transform 0.1s ease;
   transform-origin: top center;
-}
-
-/* Walking animations */
-.avatar-character.walking .avatar-body {
-  animation: bodyBounce 0.3s ease infinite;
-}
-
-@keyframes bodyBounce {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
 }
 
 body.dark-mode {
@@ -884,104 +1030,62 @@ body.dark-mode .filter.active {
   }
 }
 
-/* ========== SLIDE ANIMATIONS FOR HERO TEXT ========== */
-
-/* Slide in from left */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-80px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Slide in from right */
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(80px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Slide in from bottom */
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Fade in with scale */
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Apply to hero elements */
-.hero-content {
-  animation: slideInLeft 0.8s ease-out forwards;
-}
-
-.hero h1 {
-  animation: slideInRight 0.6s ease-out 0.2s forwards;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.hero .samurai-divider {
-  animation: fadeInScale 0.5s ease-out forwards;
-}
-
-.hero .samurai-quote {
-  animation: slideInUp 0.5s ease-out 0.3s forwards;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.hero p {
-  animation: slideInLeft 0.6s ease-out 0.4s forwards;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.hero .buttons {
-  animation: slideInUp 0.5s ease-out 0.5s forwards;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.hero .stats {
-  animation: fadeInScale 0.5s ease-out 0.7s forwards;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.hero-image {
-  animation: slideInRight 0.8s ease-out forwards;
-}
-
-/* Typing animation container */
+/* Enhanced slide animation for typing words */
 .typing {
   display: inline-block;
-  animation: blink 0.7s infinite;
   border-right: 3px solid #dc143c;
+  animation: blink 0.7s infinite;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+@keyframes slideWordIn {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.typing.slide-in {
+  animation: slideWordIn 0.4s ease-out;
+}
+
+/* Fix for hero heading - keeps "I walk the" and typing text on same line */
+.hero-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 1rem 0;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #fff, #dc143c, #8b0000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-heading-text {
+  background: linear-gradient(135deg, #fff, #dc143c, #8b0000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.typing {
+  display: inline-block;
+  min-width: 240px;
+  border-right: 3px solid #dc143c;
+  animation: blink 0.7s infinite;
+  background: linear-gradient(135deg, #fff, #dc143c, #8b0000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes blink {
@@ -994,22 +1098,17 @@ body.dark-mode .filter.active {
   }
 }
 
-/* Slide animation for typing text change */
-@keyframes textPop {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* Remove the old hero h1 styles that conflict */
+.hero h1 {
+  all: unset;
 }
 
-.typing-text-change {
-  animation: textPop 0.3s ease-out;
+.hero h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 1rem 0;
+  font-size: 3.2rem;
+  line-height: 1.2;
 }
