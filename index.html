@@ -1,0 +1,1698 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+    <title>Ferguson Revaldo | Samurai Yeat Mode 🗡️🎵</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+=======
+    <title>
+      Ferguson Revaldo | Full-Stack Developer | AI Chat Bot & Auth Systems
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+>>>>>>> 36b654cd2cb068367646fb9c3de22a86f568a4ba
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+<<<<<<< HEAD
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="samurai-bg"></div>
+    <canvas
+      id="bloodMoonCanvas"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      "
+    ></canvas>
+
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <span class="logo-en">⚔️ Ferguson Revaldo</span>
+          <span class="logo-ja">侍コード • YEAT MODE</span>
+        </div>
+        <nav>
+          <a href="#home" class="nav-tab">🏯 城</a>
+          <a href="#about" class="nav-tab">⚔️ 侍</a>
+          <a href="#projects" class="nav-tab">🗡️ 技</a>
+          <a href="#blog" class="nav-tab">📜 道</a>
+          <a href="#contact" class="nav-tab">✉️ 連絡</a>
+        </nav>
+        <div style="display: flex; gap: 0.5rem">
+          <button class="samurai-btn" id="darkModeToggle">🌙 闇</button>
+          <button class="samurai-btn" id="voiceTriggerBtn">
+            <i class="fas fa-microphone-alt"></i> 声
+          </button>
+        </div>
+      </header>
+
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <div class="samurai-divider">
+            <span class="katana-icon">⚔️</span>
+            <span class="tag">YEAT SAMURAI - FULL STACK WARRIOR</span>
+            <span class="katana-icon">⚔️</span>
+          </div>
+          <h1>I walk the <span id="typing-text" class="typing"></span></h1>
+          <div class="samurai-quote">
+            「Code is the sword, Yeat is the vibe, spirit is the steel」
+          </div>
+          <p>
+            Mastering AI chatbots, authentication, and real-time apps with
+            samurai precision. 9+ legendary battles won. Yeat mode always
+            active. TWIZZY RICH 🎵
+          </p>
+          <div class="buttons">
+            <a href="#projects" class="btn primary">⚔️ View My Arsenal →</a>
+            <a href="#contact" class="btn secondary">📜 Challenge Me</a>
+            <button id="exportPDF" class="btn secondary">
+              <i class="fas fa-file-pdf"></i> 武士の履歴書
+            </button>
+          </div>
+          <div class="stats">
+            <div>
+              <span class="number" id="visitorCount">0</span
+              ><span>Visitors</span>
+            </div>
+            <div><span class="number">9+</span><span>Battles Won</span></div>
+            <div><span class="number">100%</span><span>Yeat Energy</span></div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="samurai-frame">
+            <img
+              src="assets/images/revaldosuit.jpeg"
+              alt="Ferguson Revaldo"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x400?text=Samurai+Developer'
+              "
+            />
+            <div class="samurai-seal"></div>
+          </div>
+          <div class="card">
+            <h3>⚔️ Latest Katana Strike</h3>
+            <p>IT Pro Solutions - Real-time chat with Socket.io</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section">
+        <div class="section-header">
+          <span class="tag">⚔️ MARTIAL SKILLS ⚔️</span>
+          <h2>Samurai Training Levels</h2>
+        </div>
+        <div class="skills-container">
+          <div class="skill-progress">
+            <div class="skill-info">
+              <span>⚔️ Kenjutsu (JavaScript)</span
+              ><span class="skill-percent">95%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill-progress">
+            <div class="skill-info">
+              <span>🗡️ Iaido (Node.js)</span
+              ><span class="skill-percent">90%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-progress">
+            <div class="skill-info">
+              <span>🏹 Kyudo (React/Vue)</span
+              ><span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-progress">
+            <div class="skill-info">
+              <span>🎵 Yeat Flow (Speed)</span
+              ><span class="skill-percent">100%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="100"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about-card">
+          <span class="tag">⚔️ THE WARRIOR'S PATH ⚔️</span>
+          <h2>Bushido Code + Yeat Energy</h2>
+          <div class="bio-content">
+            <p>
+              I am a warrior developer who follows the ancient Bushido code, but
+              with modern Yeat energy. Every line of code is struck with
+              precision, every project is a vibe. TWIZZY RICH 🐍
+            </p>
+          </div>
+          <div class="personal-info">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i><span>Dojo: Indonesia</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-calendar-alt"></i><span>Since 2020</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-code"></i><span>Ronin → Samurai</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-card">
+          <span class="tag">🗡️ THE SEVEN VIRTUES 🗡️</span>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+              <div class="timeline-content">
+                <h3>義 - Rectitude</h3>
+                <p>Writing honest code</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="fas fa-hand-fist"></i></div>
+              <div class="timeline-content">
+                <h3>勇 - Courage</h3>
+                <p>Facing challenges</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <div class="timeline-content">
+                <h3>仁 - Benevolence</h3>
+                <p>Helping others</p>
+              </div>
+            </div>
+          </div>
+          <div class="achievements">
+            <h3><i class="fas fa-trophy"></i> Battle Victories</h3>
+            <ul>
+              <li>✓ 9+ successful campaigns</li>
+              <li>✓ 5+ real-time skirmishes</li>
+              <li>✓ 100% mission success</li>
+            </ul>
+=======
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(96, 165, 250, 0.14),
+            transparent 22%
+          ),
+          #070b18;
+        color: #e2e8f0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page-wrapper {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 24px 60px;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 0;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(7, 11, 24, 0.88);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        color: #a5b4fc;
+      }
+
+      .brand i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: rgba(99, 102, 241, 0.18);
+        color: #c7d2fe;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        font-size: 0.88rem;
+        color: #cbd5e1;
+      }
+
+      .nav-links a:hover {
+        color: #f8fafc;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 48px;
+        align-items: center;
+        padding: 40px 0 30px;
+      }
+
+      .hero-copy {
+        max-width: 660px;
+      }
+
+      .section-title {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: #94a3b8;
+        margin-bottom: 18px;
+      }
+
+      .section-heading {
+        font-size: clamp(2.8rem, 5vw, 4.4rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+        margin-bottom: 24px;
+        color: #f8fafc;
+      }
+
+      .hero-copy p {
+        color: #cbd5e1;
+        font-size: 1rem;
+        line-height: 1.85;
+        max-width: 670px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 26px;
+        border-radius: 999px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: #ffffff;
+        box-shadow: 0 18px 35px rgba(99, 102, 241, 0.22);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        color: #cbd5e1;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 36px;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        border-radius: 26px;
+        padding: 22px;
+        backdrop-filter: blur(16px);
+      }
+
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #eef2ff;
+      }
+
+      .stat-label {
+        margin-top: 10px;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        color: #94a3b8;
+        text-transform: uppercase;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 440px;
+        border-radius: 36px;
+        background: linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0.94) 0%,
+          #090d18 100%
+        );
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        box-shadow: 0 40px 80px rgba(15, 23, 42, 0.42);
+        overflow: hidden;
+      }
+
+      .hero-avatar {
+        width: 100%;
+        height: 100%;
+        min-height: 440px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(96, 165, 250, 0.24),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(124, 58, 237, 0.16),
+            transparent 24%
+          );
+        pointer-events: none;
+      }
+
+      .hero-card {
+        position: absolute;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+        padding: 28px;
+        border-radius: 28px;
+        background: rgba(15, 23, 42, 0.92);
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        box-shadow: 0 28px 50px rgba(15, 23, 42, 0.45);
+      }
+
+      .hero-card h2 {
+        margin-bottom: 12px;
+        font-size: 1.35rem;
+        color: #f8fafc;
+      }
+
+      .hero-card p {
+        color: #cbd5e1;
+        line-height: 1.75;
+      }
+
+      .content-grid {
+        display: grid;
+        gap: 28px;
+      }
+
+      .about-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-card,
+      .project-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: 28px;
+        padding: 28px;
+      }
+
+      .about-card p,
+      .project-description,
+      .project-features li,
+      .footer p {
+        color: #cbd5e1;
+      }
+
+      .about-card h2 {
+        margin: 18px 0;
+        font-size: 2.2rem;
+        line-height: 1.15;
+        color: #f8fafc;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        position: relative;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 26px 60px rgba(15, 23, 42, 0.32);
+      }
+
+      .project-number {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: rgba(99, 102, 241, 0.14);
+      }
+
+      .project-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+        background: rgba(99, 102, 241, 0.16);
+        color: #c7d2fe;
+      }
+
+      .project-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #eef2ff;
+        margin-bottom: 10px;
+      }
+
+      .project-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .badge {
+        background: rgba(99, 102, 241, 0.12);
+        color: #c7d2fe;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .project-description {
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
+      .project-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .project-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.95rem;
+      }
+
+      .project-features li i {
+        margin-top: 3px;
+        color: #818cf8;
+      }
+
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: auto;
+      }
+
+      .section-header {
+        max-width: 760px;
+      }
+
+      .stats-section {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 40px;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 34px 28px;
+        margin-top: 54px;
+        border-radius: 30px;
+        border: 1px solid rgba(148, 163, 184, 0.16);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .footer p {
+        max-width: 760px;
+        margin: 0 auto 14px;
+        font-size: 0.98rem;
+        line-height: 1.9;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background: rgba(255, 255, 255, 0.05);
+        color: #cbd5e1;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .social-links a:hover {
+        transform: translateY(-3px);
+        background: rgba(99, 102, 241, 0.22);
+        color: #ffffff;
+      }
+
+      .section-divider {
+        height: 1px;
+        margin: 52px 0;
+        background: rgba(148, 163, 184, 0.1);
+        border: none;
+      }
+
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+          min-height: 360px;
+        }
+
+        .stats-section {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hero-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .page-wrapper {
+          padding: 24px 16px 40px;
+        }
+
+        .site-header {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 18px 0;
+        }
+
+        .nav-links {
+          gap: 14px;
+        }
+
+        .hero-actions,
+        .btn-group {
+          width: 100%;
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .stats-section {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="site-header">
+        <a class="brand" href="#home">
+          <i class="fa-solid fa-code"></i>
+          Ferguson Revaldo
+        </a>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section id="home" class="hero">
+        <div class="hero-copy">
+          <p class="section-title">Developer Portfolio</p>
+          <h1 class="section-heading">
+            I'm Revaldo Ferguson, a Full-Stack Developer focused on AI,
+            real-time apps & secure auth.
+          </h1>
+          <p>
+            Crafting intelligent AI chat bots, real-time applications, polished
+            login experiences, behavior-based CAPTCHA flows, full-stack
+            dashboards, and dynamic interactive showcases built with HTML, CSS,
+            JavaScript, Node.js, Socket.io, and PostgreSQL.
+          </p>
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">
+              <i class="fa-solid fa-eye"></i> View portfolio
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-solid fa-paper-plane"></i> Contact me
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-value">9</div>
+              <div class="stat-label">Projects shipped</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Vanilla JS</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">5+</div>
+              <div class="stat-label">Real-time apps</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            class="hero-avatar"
+            src="revaldosuit.jpeg"
+            alt="Ferguson Revaldo"
+          />
+          <div class="hero-card">
+            <h2>🎉 Updated: IT Pro Solutions Platform</h2>
+            <p>
+              A complete IT services marketplace with
+              <strong>real-time live chat support (Socket.io)</strong>,
+              <strong>AnyDesk remote support integration</strong>, shopping cart
+              with tax/delivery calculation, Stripe payments, admin dashboard
+              with live chat view, and full user authentication — built with
+              Node.js, Express, SQLite, and Stripe.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="content-grid about-grid">
+        <div class="about-card">
+          <p class="section-title">About me</p>
+          <h2 class="section-heading">
+            I build AI-powered applications, real-time chat systems, dynamic
+            showcases, and modern authentication experiences.
+          </h2>
+          <p>
+            From AI chat bots to login pages, admin panels, and interactive car
+            showcases — I focus on intelligence, security, polished visuals, and
+            real-time interactions. My work includes AI assistants, behavioral
+            CAPTCHA, progressive passwords, user management, analytics
+            dashboards, and fully dynamic brand galleries.
+          </p>
+        </div>
+        <div class="about-card">
+          <p class="section-title">Skills</p>
+          <p>
+            HTML, CSS, JavaScript, Node.js, Express, Socket.io, PostgreSQL, JWT,
+            AI/LLM Integration, Cloudflare Turnstile, UX/UI, responsive design,
+            real-time WebSockets, accessibility, dynamic filtering, Stripe API,
+            SQLite, and performance-optimized front-end builds.
+          </p>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section id="portfolio">
+        <div class="section-header">
+          <p class="section-title">Featured Projects</p>
+          <h2 class="section-heading">
+            AI applications, real-time systems, auth platforms, and dynamic
+            interactive showcases built with modern technology.
+          </h2>
+        </div>
+        <div class="project-grid">
+          <!-- Project 1: Glass Morphic Auth -->
+          <div class="project-card project-1">
+            <div class="project-number">01</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-glass-water"></i>
+            </div>
+            <h3 class="project-title">Glass Morphic Auth</h3>
+            <div class="project-badges">
+              <span class="badge">BEHAVIORAL CAPTCHA</span>
+              <span class="badge">2FA</span>
+              <span class="badge">PASSWORD STRENGTH</span>
+            </div>
+            <p class="project-description">
+              Modern authentication with glass morphic design, animated
+              hue-rotating background, and behavioral CAPTCHA that tracks mouse
+              movements and human interaction patterns.
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Behavioral CAPTCHA
+                (mouse tracking)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Two-Factor
+                Authentication UI
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Password strength
+                meter
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Glass morphic design
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Hue-rotating
+                background
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://fergusonrevaldo25.github.io/auth-system"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/auth-system"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: Split-Screen Login -->
+          <div class="project-card project-2">
+            <div class="project-number">02</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-split"></i>
+            </div>
+            <h3 class="project-title">Split-Screen Login</h3>
+            <div class="project-badges">
+              <span class="badge">CLOUDFLARE TURNSTILE</span>
+              <span class="badge">SPLIT SCREEN</span>
+              <span class="badge">PURPLE THEME</span>
+            </div>
+            <p class="project-description">
+              50/50 split-screen design with custom background and Cloudflare
+              Turnstile CAPTCHA integration. Color-matched to the image for
+              seamless visual harmony.
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Cloudflare Turnstile
+                CAPTCHA
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Split-screen layout
+                (50/50)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Purple color scheme
+                matched to image
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Password strength
+                meter
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Social login buttons
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://fergusonrevaldo25.github.io/split-login"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/split-login"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: Neo-Brutalist Gamified -->
+          <div class="project-card project-3">
+            <div class="project-number">03</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <h3 class="project-title">Neo-Brutalist Gamified</h3>
+            <div class="project-badges">
+              <span class="badge">GAMIFIED</span>
+              <span class="badge">XP SYSTEM</span>
+              <span class="badge">COMBO MECHANIC</span>
+            </div>
+            <p class="project-description">
+              Bold, edgy authentication with gaming mechanics. Earn XP, build
+              combos, level up, and battle CAPTCHAs in an arena-style interface.
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> XP Bar & Leveling
+                System
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Combo counter (chain
+                actions for bonus)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> HP system (wrong
+                answers damage you)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Neo-brutalist design
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Icon-based CAPTCHA
+                battle
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://fergusonrevaldo25.github.io/neo-brutalist-login"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/neo-brutalist-login"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4: Glass Dashboard -->
+          <div class="project-card project-4">
+            <div class="project-number">04</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3 class="project-title">Glass Dashboard</h3>
+            <div class="project-badges">
+              <span class="badge">FULL-STACK</span>
+              <span class="badge">USER MANAGEMENT</span>
+              <span class="badge">REAL-TIME</span>
+            </div>
+            <p class="project-description">
+              Complete production-ready authentication dashboard with glass
+              morphic design, behavioral CAPTCHA, full user management (CRUD),
+              real-time analytics, and dark/light mode.
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Full-stack with
+                Node.js + Express + PostgreSQL
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Behavioral CAPTCHA
+                (mouse tracking, keystrokes)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Complete User
+                Management (Add, Edit, Delete, Search)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Real-time dashboard
+                with stats & charts
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Dark/Light mode with
+                persistence
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Profile picture upload
+                (automatic optimization)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Activity tracking &
+                notifications
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> CSV export &
+                leaderboard
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://fergusonrevaldo25.github.io/Glass-Morphic-Authentication-Dashboard/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/Glass-Morphic-Authentication-Dashboard"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 5: AI Real-Time Chat Bot -->
+          <div class="project-card project-5">
+            <div class="project-number">05</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3 class="project-title">AI Real-Time Chat Bot</h3>
+            <div class="project-badges">
+              <span class="badge">REAL-TIME</span>
+              <span class="badge">SOCKET.IO</span>
+              <span class="badge">AI-POWERED</span>
+              <span class="badge">NODE.JS</span>
+            </div>
+            <p class="project-description">
+              Production-ready AI chat application with real-time messaging,
+              intelligent responses, Socket.io integration, and beautiful
+              glass-morphism UI. Ask it anything!
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Real-time messaging
+                with Socket.io
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Intelligent AI
+                responses (jokes, math, Q&A)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> User authentication
+                system
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Glass-morphism UI with
+                animations
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Typing indicators &
+                message history
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Fully responsive
+                design
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://realtime-ai-chat-whil.onrender.com"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/Real-Time-App"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 6: Lamborghini Dynamic Showcase -->
+          <div class="project-card project-6">
+            <div class="project-number">06</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-bull"></i>
+            </div>
+            <h3 class="project-title">Lamborghini Dynamic Showcase</h3>
+            <div class="project-badges">
+              <span class="badge">HTML/CSS/JS</span>
+              <span class="badge">DYNAMIC FILTERING</span>
+              <span class="badge">SHARP EDGES</span>
+              <span class="badge">GLASSMORPHISM</span>
+            </div>
+            <p class="project-description">
+              A fully interactive Lamborghini gallery with real-time search &
+              sorting, detailed modal views, and a brutalist sharp‑edge
+              aesthetic. Features 8 iconic models (Aventador SVJ, Revuelto, Urus
+              Performante, etc.), local high‑res images, and a custom background
+              overlay.
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Live search & multiple
+                sort options (HP, top speed, year)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Detailed modals with
+                full specifications & descriptions
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Zero border‑radius
+                “sharp edges” design language
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Glass‑morphism cards
+                with hover effects
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Fully responsive grid
+                layout
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Custom local image
+                integration
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://fergusonrevaldo25.github.io/LABOGINIS-WEBSITE/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/LABOGINIS-WEBSITE"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 7: Weather & Region Dashboard -->
+          <div class="project-card project-7">
+            <div class="project-number">07</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-cloud-sun-rain"></i>
+            </div>
+            <h3 class="project-title">Weather & Region Dashboard</h3>
+            <div class="project-badges">
+              <span class="badge">OPEN‑METEO API</span>
+              <span class="badge">NO API KEY</span>
+              <span class="badge">GLASSMORPHISM</span>
+              <span class="badge">AUTO‑REFRESH</span>
+            </div>
+            <p class="project-description">
+              A live, auto‑refreshing weather dashboard that monitors multiple
+              regions worldwide. Uses the free Open‑Meteo API (no API key
+              required) and OpenStreetMap for city search. Features glassmorphic
+              UI, 3‑day forecast, and real‑time conditions.
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> 8 preset regions +
+                search any city globally
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Current weather (temp,
+                wind, weather icon)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> 3‑day forecast with
+                high/low temps
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Auto‑refresh every 5
+                minutes + manual refresh
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Fully responsive
+                glassmorphic design
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://fergusonrevaldo25.github.io/weather-dashboard"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/weather-dashboard"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 8: IT Pro Solutions (NEW - Featured Project) -->
+          <div class="project-card project-8">
+            <div class="project-number">08</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <h3 class="project-title">IT Pro Solutions</h3>
+            <div class="project-badges">
+              <span class="badge">FULL-STACK</span>
+              <span class="badge">SHOPPING CART</span>
+              <span class="badge">REAL-TIME CHAT</span>
+              <span class="badge">SOCKET.IO</span>
+              <span class="badge">ADMIN DASHBOARD</span>
+              <span class="badge">ANYDESK INTEGRATION</span>
+            </div>
+            <p class="project-description">
+              A complete IT services marketplace platform with
+              <strong>real-time live chat support (Socket.io)</strong>,
+              <strong>AnyDesk remote support integration</strong>, shopping cart
+              with tax/delivery calculation, Stripe payment integration, admin
+              dashboard with live chat view, user authentication, and real-time
+              analytics.
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-comment"></i>
+                <strong>Real-time chat</strong> with Socket.io - instant
+                messaging, typing indicators
+              </li>
+              <li>
+                <i class="fa-solid fa-desktop"></i>
+                <strong>AnyDesk integration</strong> - one-click remote support
+                requests with unique IDs
+              </li>
+              <li>
+                <i class="fa-solid fa-chart-line"></i> Admin dashboard with live
+                chat view and AnyDesk request tracking
+              </li>
+              <li>
+                <i class="fa-solid fa-shopping-cart"></i> Full shopping cart
+                with quantity controls, tax & delivery calculation
+              </li>
+              <li>
+                <i class="fa-solid fa-lock"></i> JWT authentication with bcrypt
+                password hashing
+              </li>
+              <li>
+                <i class="fa-solid fa-bell"></i> Email notifications for signup
+                and orders (Nodemailer)
+              </li>
+              <li>
+                <i class="fa-solid fa-mobile-alt"></i> Glass-morphism UI with
+                mobile-responsive design
+              </li>
+              <li>
+                <i class="fa-solid fa-shield-alt"></i> CAPTCHA verification on
+                login
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://fergusonrevaldo25.github.io/IT-Services-Dashboard/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/IT-Services-Dashboard"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 9: Classic Calculator & Chat Assistant -->
+          <div class="project-card project-9">
+            <div class="project-number">09</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <h3 class="project-title">Classic Calculator & Chat Assistant</h3>
+            <div class="project-badges">
+              <span class="badge">VANILLA JS</span>
+              <span class="badge">CALCULATOR</span>
+              <span class="badge">NATURAL LANGUAGE</span>
+              <span class="badge">CHAT ASSISTANT</span>
+            </div>
+            <p class="project-description">
+              A compact, classic-styled calculator with a hidden
+              natural-language math chat. Sharp edges, red-white gradient
+              background, and real-time calculation. The chat panel understands
+              percentages, square roots, powers, and plain expressions.
+            </p>
+            <ul class="project-features">
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Full arithmetic
+                calculator (+, -, ×, ÷, √, %, x²)
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Hidden chat assistant
+                – appears only on demand
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Natural language
+                understanding: "20% of 250", "sqrt 144", "2^8"
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Sharp, classic design
+                with zero border-radius
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Red-to-white gradient
+                background, solid card shadow
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i> Fully responsive and
+                keyboard-friendly
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a
+                href="https://fergusonrevaldo25.github.io/classic-calculator-chat"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fa-solid fa-eye"></i> LIVE DEMO
+              </a>
+              <a
+                href="https://github.com/FergusonRevaldo25/classic-calculator-chat"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-github"></i> SOURCE
+              </a>
+            </div>
+>>>>>>> 36b654cd2cb068367646fb9c3de22a86f568a4ba
+          </div>
+        </div>
+      </section>
+
+<<<<<<< HEAD
+      <section class="testimonials">
+        <div class="section-header">
+          <span class="tag">⚔️ WAR COUNCIL ⚔️</span>
+          <h2>Words from Fellow Warriors</h2>
+        </div>
+        <div class="testimonial-slider" id="testimonialSlider">
+          <div class="testimonial-track" id="testimonialTrack">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                "A true warrior of code. Ferguson defeated our technical debt
+                while bumping Yeat!"
+              </p>
+              <div class="client-info">
+                <h4>John Doe</h4>
+                <span>Daimyo</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                "His katana-like precision is unmatched. Plus he plays Yeat -
+                instant respect!"
+              </p>
+              <div class="client-info">
+                <h4>Sarah Chen</h4>
+                <span>Strategist</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                "Fought alongside him. His speed is legendary - twizzy rich
+                energy!"
+              </p>
+              <div class="client-info">
+                <h4>Mike Johnson</h4>
+                <span>Shogun</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <button class="slider-btn prev" id="prevTestimonial">❮</button>
+          <button class="slider-btn next" id="nextTestimonial">❯</button>
+        </div>
+        <div class="slider-dots" id="sliderDots"></div>
+      </section>
+
+      <section id="projects">
+        <div class="section-header">
+          <span class="tag">🗡️ WEAPONS ARSENAL 🗡️</span>
+          <h2>Legendary Blades Forged</h2>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">All Weapons</button>
+          <button class="filter" data-filter="auth">Defensive Arts</button>
+          <button class="filter" data-filter="ai">Intelligent Blades</button>
+          <button class="filter" data-filter="dashboard">
+            Command Centers
+          </button>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </section>
+
+      <section class="github-activity">
+        <div class="section-header">
+          <span class="tag">⚔️ HONOR POINTS ⚔️</span>
+          <h2>GitHub Battle Records</h2>
+        </div>
+        <div class="github-stats">
+          <div class="github-card">
+            <i class="fab fa-github"></i>
+            <div class="github-stat">9</div>
+            <p>Katanas Forged</p>
+          </div>
+          <div class="github-card">
+            <i class="fas fa-code-branch"></i>
+            <div class="github-stat">1.2K</div>
+            <p>Strikes Made</p>
+          </div>
+          <div class="github-card">
+            <i class="fas fa-users"></i>
+            <div class="github-stat">15</div>
+            <p>Allies Gained</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="blog-section">
+        <div class="section-header">
+          <span class="tag">📜 ANCIENT SCROLLS 📜</span>
+          <h2>Wisdom from the Dojo</h2>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div class="blog-icon"><i class="fas fa-robot"></i></div>
+            <h3>The Way of AI</h3>
+            <p class="blog-date">Dec 2024</p>
+            <p>How I trained my AI blade...</p>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+          <div class="blog-card">
+            <div class="blog-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>The Art of Defense</h3>
+            <p class="blog-date">Dec 2024</p>
+            <p>Building unbreakable walls...</p>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+          <div class="blog-card">
+            <div class="blog-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Lightning Strikes</h3>
+            <p class="blog-date">Dec 2024</p>
+            <p>Real-time combat...</p>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-form-section">
+        <div class="section-header">
+          <span class="tag">⚔️ CHALLENGE THE SAMURAI ⚔️</span>
+          <h2>Send Your War Scroll</h2>
+        </div>
+        <div class="contact-wrapper">
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <select id="service">
+                <option value="">Choose Your Challenge</option>
+                <option>⚔️ AI Combat System</option>
+                <option>🗡️ Authentication Fortress</option>
+                <option>🏹 Real-time Battle Arena</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="Describe your battle request..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn primary submit-btn">
+              Send Raven <i class="fas fa-paper-plane"></i>
+            </button>
+            <div id="formStatus" class="form-status"></div>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          ⚔️ The way of the warrior code - Always improving, never retreating ⚔️
+        </p>
+        <div class="social">
+          <a href="https://github.com/FergusonRevaldo25" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/revaldo-ferguson-45b98321b/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://www.instagram.com/fergusonrevaldo" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <p class="copyright">
+          © 2024 Ferguson Revaldo — 侍コード • Yeat Mode • Twizzy Rich • Bushido
+          Code
+        </p>
+      </footer>
+    </div>
+
+    <button id="backToTop" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Yeat Music Player - 3 Songs -->
+    <div class="yeat-music-player" id="yeatPlayer">
+      <button class="yeat-btn" id="yeatToggle">
+        <i class="fas fa-play"></i>
+        <span>YEAT</span>
+      </button>
+      <div class="yeat-controls">
+        <div class="yeat-song-info">
+          <span id="yeatSongName">🎤 Yeat - Nun id change</span>
+          <div class="yeat-volume">
+            <i class="fas fa-volume-up"></i>
+            <input
+              type="range"
+              id="yeatVolume"
+              min="0"
+              max="1"
+              step="0.1"
+              value="0.5"
+            />
+          </div>
+        </div>
+        <div class="yeat-presets">
+          <button class="yeat-song-btn" data-song="1">🎤 Nun id change</button>
+          <button class="yeat-song-btn" data-song="2">🎤 Bëttr 0ff</button>
+          <button class="yeat-song-btn" data-song="3">
+            🎤 If We Being Rëal
+          </button>
+        </div>
+        <div class="yeat-credit">
+          <small>🎧 YEAT • TWIZZY RICH 🐍</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden audio player -->
+    <audio id="yeatAudioPlayer" style="display: none" loop></audio>
+
+    <!-- Samurai Apprentice Avatar -->
+    <div class="avatar-container" id="avatarContainer">
+      <div class="avatar-speech" id="avatarSpeech">👋 Yo! Click any tab!</div>
+      <div class="avatar-character" id="avatarCharacter">
+        <div class="avatar-body">
+          <div class="avatar-face">
+            <div class="avatar-eyes">
+              <div class="avatar-eye"></div>
+              <div class="avatar-eye"></div>
+            </div>
+            <div class="avatar-mouth"></div>
+          </div>
+          <div class="avatar-bandana">⚔️</div>
+        </div>
+        <div class="avatar-legs">
+          <div class="avatar-leg"></div>
+          <div class="avatar-leg"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+=======
+      <section class="stats-section">
+        <div class="stat-card">
+          <div class="stat-value">9</div>
+          <div class="stat-label">Complete projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Vanilla JS</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">5+</div>
+          <div class="stat-label">Real-time apps</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">50+</div>
+          <div class="stat-label">Features total</div>
+        </div>
+      </section>
+
+      <footer id="contact" class="footer">
+        <p>
+          Let's bring AI-powered applications, real-time chat systems,
+          interactive showcases, and secure authentication to your next project.
+        </p>
+        <p>
+          Connect via GitHub, LinkedIn, or Instagram to discuss AI integration,
+          real-time apps, full-stack builds, dynamic galleries, or design-led
+          interfaces.
+        </p>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/revaldo-ferguson-45b98321b/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/fergusonrevaldo"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="https://github.com/FergusonRevaldo25"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+>>>>>>> 36b654cd2cb068367646fb9c3de22a86f568a4ba
+  </body>
+</html>
