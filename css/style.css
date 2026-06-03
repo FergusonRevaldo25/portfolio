@@ -375,6 +375,36 @@ nav {
   margin: 0 auto;
 }
 
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  background: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  color: #4a4a5a;
+}
+
+.filter-btn:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: #6366f1;
+  color: white;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -483,6 +513,12 @@ nav {
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+.demo-soon {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 /* ========== SERVICES SECTION ========== */
@@ -699,6 +735,16 @@ body.dark-mode .skill-tag {
   color: #e2e8f0;
 }
 
+body.dark-mode .filter-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+}
+
+body.dark-mode .filter-btn.active {
+  background: #6366f1;
+  color: white;
+}
+
 body.dark-mode .form-group input,
 body.dark-mode .form-group textarea {
   background: rgba(255, 255, 255, 0.05);
@@ -784,58 +830,4 @@ body.dark-mode .social-links a {
     text-align: center;
     width: 100%;
   }
-}
-
-/* ========== PROJECT FILTER STYLES ========== */
-.projects-filter {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-bottom: 2.5rem;
-}
-
-.filter-btn {
-  padding: 0.5rem 1.2rem;
-  border-radius: 30px;
-  background: #f0f0f0;
-  border: none;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s;
-  color: #4a4a5a;
-}
-
-.filter-btn:hover {
-  background: #e0e0e0;
-  transform: translateY(-2px);
-}
-
-.filter-btn.active {
-  background: #6366f1;
-  color: white;
-}
-
-body.dark-mode .filter-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
-}
-
-body.dark-mode .filter-btn.active {
-  background: #6366f1;
-  color: white;
-}
-
-.demo-soon {
-  color: #94a3b8;
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
-/* ========== UPDATED SERVICES GRID ========== */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
 }

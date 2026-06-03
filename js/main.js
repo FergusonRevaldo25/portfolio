@@ -8,9 +8,59 @@ const EMAILJS_CONFIG = {
   TEMPLATE_ID: "template_byj0l2n",
 };
 
-// ========== PROJECTS DATA WITH IMAGES ==========
+// ========== PROJECTS DATA WITH IMAGES (UPDATED WITH NEW DEVOPS PROJECTS) ==========
 const projectsData = [
-  // ===== DEVOPS PROJECTS (NEW - PROMETHEUS STACK) =====
+  // ===== NEW DEVOPS PROJECTS (JUST COMPLETED) =====
+  {
+    id: 14,
+    title: "GitHub Actions CI/CD Pipeline",
+    category: "devops",
+    icon: "fa-brands fa-github-actions",
+    image: "assets/images/github-actions.jpg",
+    badges: ["GitHub Actions", "CI/CD", "Python", "Automation"],
+    description:
+      "Automated CI/CD pipeline with GitHub Actions. Runs Python unit tests automatically on every push. Features workflow automation, test reporting, and continuous integration.",
+    demo: "https://github.com/FergusonRevaldo25/python-cicd-demo",
+    repo: "https://github.com/FergusonRevaldo25/python-cicd-demo",
+  },
+  {
+    id: 15,
+    title: "Terraform Infrastructure as Code",
+    category: "devops",
+    icon: "fa-brands fa-terraform",
+    image: "assets/images/terraform.jpg",
+    badges: ["Terraform", "Docker", "IaC", "Nginx"],
+    description:
+      "Infrastructure as Code using Terraform to provision Docker containers. Deploys Nginx web server with declarative configuration and state management.",
+    demo: "http://localhost:8080",
+    repo: "https://github.com/FergusonRevaldo25/terraform-docker-demo",
+  },
+  {
+    id: 16,
+    title: "Kubernetes with Minikube",
+    category: "devops",
+    icon: "fa-brands fa-kubernetes",
+    image: "assets/images/kubernetes.jpg",
+    badges: ["Kubernetes", "Minikube", "Pods", "Scaling"],
+    description:
+      "Local Kubernetes cluster with Minikube. Features 5-replica Nginx deployment, self-healing pods, NodePort service, and container orchestration.",
+    demo: "http://localhost:30080",
+    repo: "https://github.com/FergusonRevaldo25/k8s-minikube-demo",
+  },
+  {
+    id: 17,
+    title: "Prometheus + Grafana Stack",
+    category: "devops",
+    icon: "fa-solid fa-chart-line",
+    image: "assets/images/prometheus-grafana.jpg",
+    badges: ["Prometheus", "Grafana", "Docker", "Monitoring"],
+    description:
+      "Complete monitoring stack with Prometheus metrics collection and Grafana dashboards for real-time visualization.",
+    demo: "http://localhost:3000",
+    repo: "https://github.com/FergusonRevaldo25/prometheus-stack",
+  },
+
+  // ===== EXISTING DEVOPS PROJECTS =====
   {
     id: 13,
     title: "Prometheus + Grafana Stack",
@@ -66,7 +116,8 @@ const projectsData = [
     demo: "http://localhost:5001",
     repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project3-docker-app",
   },
-  // ===== EXISTING PROJECTS =====
+
+  // ===== EXISTING PROJECTS (AUTH, DASHBOARD, AI, SHOWCASE) =====
   {
     id: 1,
     title: "Glass Morphic Auth",
@@ -181,6 +232,7 @@ const projectsData = [
 let currentFilter = "all";
 
 function renderProjects() {
+  const projectsGrid = document.getElementById("projectsGrid");
   if (!projectsGrid) return;
 
   const filteredProjects =
@@ -218,7 +270,6 @@ function renderProjects() {
     .join("");
 }
 
-// ========== FILTER BUTTONS ==========
 function initFilters() {
   const filterBtns = document.querySelectorAll(".filter-btn");
   filterBtns.forEach((btn) => {
@@ -231,7 +282,7 @@ function initFilters() {
   });
 }
 
-// ========== CONTACT FORM WITH EMAILJS (WORKING) ==========
+// ========== CONTACT FORM WITH EMAILJS ==========
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 
@@ -493,8 +544,8 @@ window.addEventListener("load", () => {
   updateVisitorCount();
   setActiveNav();
 
-  console.log("🚀 Portfolio loaded with DevOps projects!");
+  console.log("🚀 Portfolio loaded with new DevOps projects!");
   console.log(
-    "✅ Added: Prometheus + Grafana Stack, Log Archiver, Nginx, Docker projects",
+    "✅ Added: GitHub Actions CI/CD, Terraform, Kubernetes, Prometheus/Grafana",
   );
 });
