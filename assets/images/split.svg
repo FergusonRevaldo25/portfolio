@@ -1,0 +1,5 @@
+﻿<svg width='400' height='250' xmlns='http://www.w3.org/2000/svg'>
+    <rect width='400' height='250' fill='#6366f1'/>
+    <text x='200' y='125' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>split</text>
+    <text x='200' y='155' text-anchor='middle' fill='#a5b4fc' font-size='14'>Click to view project</text>
+</svg>
