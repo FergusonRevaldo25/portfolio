@@ -1,16 +1,14 @@
 // ========== EMAILJS CONFIGURATION ==========
-// Initialize EmailJS with your Public Key
 emailjs.init("byBeW_d1HrZ36CZVa");
 
-// EmailJS Configuration - USING YOUR CORRECT SERVICE ID
 const EMAILJS_CONFIG = {
-  SERVICE_ID: "service_fzpmxxm", // Your correct Service ID
+  SERVICE_ID: "service_fzpmxxm",
   TEMPLATE_ID: "template_byj0l2n",
 };
 
-// ========== PROJECTS DATA WITH IMAGES (UPDATED WITH NEW DEVOPS PROJECTS) ==========
+// ========== PROJECTS DATA - NO DUPLICATES ==========
 const projectsData = [
-  // ===== NEW DEVOPS PROJECTS (JUST COMPLETED) =====
+  // ===== NEW DEVOPS PROJECTS =====
   {
     id: 14,
     title: "GitHub Actions CI/CD Pipeline",
@@ -45,7 +43,7 @@ const projectsData = [
     description:
       "Local Kubernetes cluster with Minikube. Features 5-replica Nginx deployment, self-healing pods, NodePort service, and container orchestration.",
     demo: "http://localhost:30080",
-    repo: "https://github.com/FergusonRevaldo25/k8s-minikube-demo",
+    repo: "https://github.com/FergusonRevaldo25/kubernetes-minikube-demo",
   },
   {
     id: 17,
@@ -55,31 +53,12 @@ const projectsData = [
     image: "assets/images/prometheus-grafana.jpg",
     badges: ["Prometheus", "Grafana", "Docker", "Monitoring"],
     description:
-      "Complete monitoring stack with Prometheus metrics collection and Grafana dashboards for real-time visualization.",
+      "Complete monitoring stack with Prometheus metrics collection and Grafana dashboards for real-time visualization. Features request rate tracking, active users monitoring, error rate analysis, and latency visualization.",
     demo: "http://localhost:3000",
-    repo: "https://github.com/FergusonRevaldo25/prometheus-stack",
+    repo: "https://github.com/FergusonRevaldo25/prometheus-grafana-stack",
   },
 
   // ===== EXISTING DEVOPS PROJECTS =====
-  {
-    id: 13,
-    title: "Prometheus + Grafana Stack",
-    category: "devops",
-    icon: "fa-solid fa-chart-line",
-    image: "assets/images/prometheus-grafana.jpg",
-    badges: [
-      "Prometheus",
-      "Grafana",
-      "Docker",
-      "Python",
-      "Flask",
-      "Monitoring",
-    ],
-    description:
-      "Complete monitoring stack with Prometheus metrics collection, Grafana dashboards, and a custom Python Flask app generating real-time metrics. Features request rate tracking (0.37 req/s), active users monitoring (0-100), error rate analysis (13%), and 95th percentile latency visualization (96ms-239ms). Deployed with Docker Compose.",
-    demo: "http://localhost:3000",
-    repo: "https://github.com/FergusonRevaldo25/prometheus-stack",
-  },
   {
     id: 10,
     title: "Automated Log Archiver",
@@ -117,7 +96,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project3-docker-app",
   },
 
-  // ===== EXISTING PROJECTS (AUTH, DASHBOARD, AI, SHOWCASE) =====
+  // ===== AUTH PROJECTS =====
   {
     id: 1,
     title: "Glass Morphic Auth",
@@ -154,6 +133,8 @@ const projectsData = [
     demo: "https://fergusonrevaldo25.github.io/neo-brutalist-login",
     repo: "https://github.com/FergusonRevaldo25/neo-brutalist-login",
   },
+
+  // ===== DASHBOARD PROJECTS =====
   {
     id: 4,
     title: "Glass Dashboard",
@@ -165,30 +146,6 @@ const projectsData = [
       "Complete admin dashboard with user management, real-time analytics, and dark mode.",
     demo: "https://fergusonrevaldo25.github.io/Glass-Morphic-Authentication-Dashboard/",
     repo: "https://github.com/FergusonRevaldo25/Glass-Morphic-Authentication-Dashboard",
-  },
-  {
-    id: 5,
-    title: "AI Real-Time Chat Bot",
-    category: "ai",
-    icon: "fa-solid fa-robot",
-    image: "assets/images/Al.jpg",
-    badges: ["AI", "Real-time", "Socket.io"],
-    description:
-      "Intelligent AI chat companion with real-time messaging and smart responses.",
-    demo: "https://realtime-ai-chat-whil.onrender.com",
-    repo: "https://github.com/FergusonRevaldo25/Real-Time-App",
-  },
-  {
-    id: 6,
-    title: "Lamborghini Showcase",
-    category: "showcase",
-    icon: "fa-solid fa-car",
-    image: "assets/images/lam.jpg",
-    badges: ["Gallery", "Filtering", "Interactive"],
-    description:
-      "Interactive car showcase with real-time filtering and detailed specifications.",
-    demo: "https://fergusonrevaldo25.github.io/LABOGINIS-WEBSITE/",
-    repo: "https://github.com/FergusonRevaldo25/LABOGINIS-WEBSITE",
   },
   {
     id: 7,
@@ -214,6 +171,20 @@ const projectsData = [
     demo: "https://fergusonrevaldo25.github.io/IT-Services-Dashboard/",
     repo: "https://github.com/FergusonRevaldo25/IT-Services-Dashboard",
   },
+
+  // ===== AI & CHAT PROJECTS =====
+  {
+    id: 5,
+    title: "AI Real-Time Chat Bot",
+    category: "ai",
+    icon: "fa-solid fa-robot",
+    image: "assets/images/Al.jpg",
+    badges: ["AI", "Real-time", "Socket.io"],
+    description:
+      "Intelligent AI chat companion with real-time messaging and smart responses.",
+    demo: "https://realtime-ai-chat-whil.onrender.com",
+    repo: "https://github.com/FergusonRevaldo25/Real-Time-App",
+  },
   {
     id: 9,
     title: "Calculator & Chat Assistant",
@@ -225,6 +196,20 @@ const projectsData = [
       "Classic calculator with natural language chat assistant for math operations.",
     demo: "https://fergusonrevaldo25.github.io/classic-calculator-chat",
     repo: "https://github.com/FergusonRevaldo25/classic-calculator-chat",
+  },
+
+  // ===== SHOWCASE PROJECTS =====
+  {
+    id: 6,
+    title: "Lamborghini Showcase",
+    category: "showcase",
+    icon: "fa-solid fa-car",
+    image: "assets/images/lam.jpg",
+    badges: ["Gallery", "Filtering", "Interactive"],
+    description:
+      "Interactive car showcase with real-time filtering and detailed specifications.",
+    demo: "https://fergusonrevaldo25.github.io/LABOGINIS-WEBSITE/",
+    repo: "https://github.com/FergusonRevaldo25/LABOGINIS-WEBSITE",
   },
 ];
 
@@ -282,7 +267,7 @@ function initFilters() {
   });
 }
 
-// ========== CONTACT FORM WITH EMAILJS ==========
+// ========== CONTACT FORM ==========
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 
@@ -544,8 +529,6 @@ window.addEventListener("load", () => {
   updateVisitorCount();
   setActiveNav();
 
-  console.log("🚀 Portfolio loaded with new DevOps projects!");
-  console.log(
-    "✅ Added: GitHub Actions CI/CD, Terraform, Kubernetes, Prometheus/Grafana",
-  );
+  console.log("🚀 Portfolio loaded with DevOps projects!");
+  console.log("✅ Total projects:", projectsData.length);
 });
