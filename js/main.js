@@ -10,6 +10,63 @@ const EMAILJS_CONFIG = {
 
 // ========== PROJECTS DATA WITH IMAGES ==========
 const projectsData = [
+  // ===== DEVOPS PROJECTS (NEW - PROMETHEUS STACK) =====
+  {
+    id: 13,
+    title: "Prometheus + Grafana Stack",
+    category: "devops",
+    icon: "fa-solid fa-chart-line",
+    image: "assets/images/prometheus-grafana.jpg",
+    badges: [
+      "Prometheus",
+      "Grafana",
+      "Docker",
+      "Python",
+      "Flask",
+      "Monitoring",
+    ],
+    description:
+      "Complete monitoring stack with Prometheus metrics collection, Grafana dashboards, and a custom Python Flask app generating real-time metrics. Features request rate tracking (0.37 req/s), active users monitoring (0-100), error rate analysis (13%), and 95th percentile latency visualization (96ms-239ms). Deployed with Docker Compose.",
+    demo: "http://localhost:3000",
+    repo: "https://github.com/FergusonRevaldo25/prometheus-stack",
+  },
+  {
+    id: 10,
+    title: "Automated Log Archiver",
+    category: "devops",
+    icon: "fa-solid fa-file-archive",
+    image: "assets/images/log-archiver.jpg",
+    badges: ["Bash", "Cron", "Linux", "Automation"],
+    description:
+      "Bash script that automatically compresses logs with timestamps, archives them, and schedules daily backups via cron. Deletes logs older than 7 days.",
+    demo: "#",
+    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project1-log-archiver",
+  },
+  {
+    id: 11,
+    title: "Nginx Static Portfolio",
+    category: "devops",
+    icon: "fa-solid fa-server",
+    image: "assets/images/nginx.jpg",
+    badges: ["Nginx", "Linux", "HTML/CSS", "Reverse Proxy"],
+    description:
+      "Manual Linux server provisioning with Nginx hosting a static website. Configured security headers and reverse proxy routing.",
+    demo: "http://localhost:8080",
+    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project2-nginx-website",
+  },
+  {
+    id: 12,
+    title: "Containerized Python App",
+    category: "devops",
+    icon: "fa-brands fa-docker",
+    image: "assets/images/docker.jpg",
+    badges: ["Docker", "Python", "Flask", "Multi-stage"],
+    description:
+      "Multi-stage Docker containerization of a Python Flask app. 84% size reduction (1.2GB → 194MB) with non-root user and health checks.",
+    demo: "http://localhost:5001",
+    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project3-docker-app",
+  },
+  // ===== EXISTING PROJECTS =====
   {
     id: 1,
     title: "Glass Morphic Auth",
@@ -120,16 +177,21 @@ const projectsData = [
   },
 ];
 
-// ========== RENDER PROJECTS ==========
-const projectsGrid = document.getElementById("projectsGrid");
+// ========== FILTER FUNCTIONALITY ==========
+let currentFilter = "all";
 
 function renderProjects() {
   if (!projectsGrid) return;
 
-  projectsGrid.innerHTML = projectsData
+  const filteredProjects =
+    currentFilter === "all"
+      ? projectsData
+      : projectsData.filter((project) => project.category === currentFilter);
+
+  projectsGrid.innerHTML = filteredProjects
     .map(
       (project) => `
-        <div class="project-card" data-id="${project.id}">
+        <div class="project-card" data-category="${project.category}">
             <div class="project-image">
                 <img src="${project.image}" alt="${project.title}" 
                      onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%236366f1\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'white\' font-family=\'Arial\' font-size=\'20\'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E'">
@@ -146,7 +208,7 @@ function renderProjects() {
                 </div>
                 <p>${project.description}</p>
                 <div class="project-links">
-                    <a href="${project.demo}" target="_blank">Live Demo →</a>
+                    ${project.demo !== "#" ? `<a href="${project.demo}" target="_blank">Live Demo →</a>` : '<span class="demo-soon">Local Demo</span>'}
                     <a href="${project.repo}" target="_blank">Source Code</a>
                 </div>
             </div>
@@ -154,6 +216,19 @@ function renderProjects() {
     `,
     )
     .join("");
+}
+
+// ========== FILTER BUTTONS ==========
+function initFilters() {
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentFilter = btn.getAttribute("data-filter");
+      renderProjects();
+    });
+  });
 }
 
 // ========== CONTACT FORM WITH EMAILJS (WORKING) ==========
@@ -187,18 +262,12 @@ if (contactForm) {
       message_html: message,
     };
 
-    console.log("Sending with params:", templateParams);
-    console.log("Service ID:", EMAILJS_CONFIG.SERVICE_ID);
-    console.log("Template ID:", EMAILJS_CONFIG.TEMPLATE_ID);
-
     try {
       const response = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         templateParams,
       );
-
-      console.log("EmailJS Response:", response);
 
       if (response.status === 200) {
         showFormStatus(
@@ -420,13 +489,12 @@ skillTags.forEach((tag) => {
 // ========== INITIALIZE ==========
 window.addEventListener("load", () => {
   renderProjects();
+  initFilters();
   updateVisitorCount();
   setActiveNav();
 
-  console.log("🚀 Portfolio loaded!");
-  console.log("✅ Service ID:", EMAILJS_CONFIG.SERVICE_ID);
-  console.log("✅ Template ID:", EMAILJS_CONFIG.TEMPLATE_ID);
+  console.log("🚀 Portfolio loaded with DevOps projects!");
   console.log(
-    "📧 Contact form will send emails to revaldo.ferguson01@gmail.com",
+    "✅ Added: Prometheus + Grafana Stack, Log Archiver, Nginx, Docker projects",
   );
 });
