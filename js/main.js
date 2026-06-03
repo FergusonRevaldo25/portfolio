@@ -6,9 +6,9 @@ const EMAILJS_CONFIG = {
   TEMPLATE_ID: "template_byj0l2n",
 };
 
-// ========== PROJECTS DATA - 16 UNIQUE PROJECTS, NO DUPLICATES ==========
+// ========== PROJECTS DATA - 16 UNIQUE PROJECTS ==========
 const projectsData = [
-  // ===== DEVOPS PROJECTS (7 projects) =====
+  // DEVOPS PROJECTS (7 projects)
   {
     id: 14,
     title: "GitHub Actions CI/CD Pipeline",
@@ -93,8 +93,7 @@ const projectsData = [
     demo: "http://localhost:5001",
     repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project3-docker-app",
   },
-
-  // ===== AUTH PROJECTS (3 projects) =====
+  // AUTH PROJECTS (3 projects)
   {
     id: 1,
     title: "Glass Morphic Auth",
@@ -131,8 +130,7 @@ const projectsData = [
     demo: "https://fergusonrevaldo25.github.io/neo-brutalist-login",
     repo: "https://github.com/FergusonRevaldo25/neo-brutalist-login",
   },
-
-  // ===== DASHBOARD PROJECTS (3 projects) =====
+  // DASHBOARD PROJECTS (3 projects)
   {
     id: 4,
     title: "Glass Dashboard",
@@ -169,8 +167,7 @@ const projectsData = [
     demo: "https://fergusonrevaldo25.github.io/IT-Services-Dashboard/",
     repo: "https://github.com/FergusonRevaldo25/IT-Services-Dashboard",
   },
-
-  // ===== AI & CHAT PROJECTS (2 projects) =====
+  // AI & CHAT PROJECTS (2 projects)
   {
     id: 5,
     title: "AI Real-Time Chat Bot",
@@ -195,8 +192,7 @@ const projectsData = [
     demo: "https://fergusonrevaldo25.github.io/classic-calculator-chat",
     repo: "https://github.com/FergusonRevaldo25/classic-calculator-chat",
   },
-
-  // ===== SHOWCASE PROJECTS (1 project) =====
+  // SHOWCASE PROJECTS (1 project)
   {
     id: 6,
     title: "Lamborghini Showcase",
@@ -276,17 +272,17 @@ if (contactForm) {
     const message = document.getElementById("message")?.value;
 
     if (!name || !email || !message) {
-      showFormStatus("❌ Please fill in all fields", "error");
+      showFormStatus("Please fill in all fields", "error");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      showFormStatus("❌ Please enter a valid email address", "error");
+      showFormStatus("Please enter a valid email address", "error");
       return;
     }
 
-    showFormStatus("📧 Sending message...", "info");
+    showFormStatus("Sending message...", "info");
 
     const templateParams = {
       from_name: name,
@@ -302,7 +298,7 @@ if (contactForm) {
       );
       if (response.status === 200) {
         showFormStatus(
-          `✅ Thank you ${name}! Your message has been sent. I'll get back to you soon.`,
+          `Thank you ${name}! Your message has been sent.`,
           "success",
         );
         contactForm.reset();
@@ -311,7 +307,7 @@ if (contactForm) {
       }
     } catch (error) {
       showFormStatus(
-        "❌ Failed to send. Please email me directly at revaldo.ferguson01@gmail.com",
+        "Failed to send. Please email me directly at revaldo.ferguson01@gmail.com",
         "error",
       );
     }
@@ -376,6 +372,5 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 window.addEventListener("load", () => {
   renderProjects();
   initFilters();
-  console.log("🚀 Portfolio loaded with 16 unique projects!");
-  console.log("✅ DevOps: 7 | Auth: 3 | Dashboard: 3 | AI: 2 | Showcase: 1");
+  console.log("Portfolio loaded with 16 unique projects!");
 });
