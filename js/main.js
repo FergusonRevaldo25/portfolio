@@ -6,9 +6,9 @@ const EMAILJS_CONFIG = {
   TEMPLATE_ID: "template_byj0l2n",
 };
 
-// ========== PROJECTS DATA - NO DUPLICATES ==========
+// ========== PROJECTS DATA - ALL 16 PROJECTS WITH IMAGES ==========
 const projectsData = [
-  // ===== NEW DEVOPS PROJECTS =====
+  // DEVOPS PROJECTS
   {
     id: 14,
     title: "GitHub Actions CI/CD Pipeline",
@@ -53,12 +53,10 @@ const projectsData = [
     image: "assets/images/prometheus-grafana.jpg",
     badges: ["Prometheus", "Grafana", "Docker", "Monitoring"],
     description:
-      "Complete monitoring stack with Prometheus metrics collection and Grafana dashboards for real-time visualization. Features request rate tracking, active users monitoring, error rate analysis, and latency visualization.",
+      "Complete monitoring stack with Prometheus metrics collection and Grafana dashboards for real-time visualization.",
     demo: "http://localhost:3000",
     repo: "https://github.com/FergusonRevaldo25/prometheus-grafana-stack",
   },
-
-  // ===== EXISTING DEVOPS PROJECTS =====
   {
     id: 10,
     title: "Automated Log Archiver",
@@ -96,7 +94,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project3-docker-app",
   },
 
-  // ===== AUTH PROJECTS =====
+  // AUTH PROJECTS
   {
     id: 1,
     title: "Glass Morphic Auth",
@@ -134,7 +132,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/neo-brutalist-login",
   },
 
-  // ===== DASHBOARD PROJECTS =====
+  // DASHBOARD PROJECTS
   {
     id: 4,
     title: "Glass Dashboard",
@@ -172,7 +170,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/IT-Services-Dashboard",
   },
 
-  // ===== AI & CHAT PROJECTS =====
+  // AI & CHAT PROJECTS
   {
     id: 5,
     title: "AI Real-Time Chat Bot",
@@ -198,7 +196,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/classic-calculator-chat",
   },
 
-  // ===== SHOWCASE PROJECTS =====
+  // SHOWCASE PROJECTS
   {
     id: 6,
     title: "Lamborghini Showcase",
@@ -228,29 +226,27 @@ function renderProjects() {
   projectsGrid.innerHTML = filteredProjects
     .map(
       (project) => `
-        <div class="project-card" data-category="${project.category}">
-            <div class="project-image">
-                <img src="${project.image}" alt="${project.title}" 
-                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%236366f1\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'white\' font-family=\'Arial\' font-size=\'20\'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E'">
-                <div class="project-overlay">
-                    <div class="project-icon">
-                        <i class="${project.icon}"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="project-info">
-                <h3>${project.title}</h3>
-                <div class="project-badges">
-                    ${project.badges.map((badge) => `<span class="badge">${badge}</span>`).join("")}
-                </div>
-                <p>${project.description}</p>
-                <div class="project-links">
-                    ${project.demo !== "#" ? `<a href="${project.demo}" target="_blank">Live Demo →</a>` : '<span class="demo-soon">Local Demo</span>'}
-                    <a href="${project.repo}" target="_blank">Source Code</a>
-                </div>
-            </div>
+    <div class="project-card" data-category="${project.category}">
+      <div class="project-image">
+        <img src="${project.image}" alt="${project.title}" 
+          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%236366f1\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'white\' font-family=\'Arial\' font-size=\'20\'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E'">
+        <div class="project-overlay">
+          <div class="project-icon"><i class="${project.icon}"></i></div>
         </div>
-    `,
+      </div>
+      <div class="project-info">
+        <h3>${project.title}</h3>
+        <div class="project-badges">
+          ${project.badges.map((badge) => `<span class="badge">${badge}</span>`).join("")}
+        </div>
+        <p>${project.description}</p>
+        <div class="project-links">
+          ${project.demo !== "#" ? `<a href="${project.demo}" target="_blank">Live Demo →</a>` : '<span class="demo-soon">Local Demo</span>'}
+          <a href="${project.repo}" target="_blank">Source Code</a>
+        </div>
+      </div>
+    </div>
+  `,
     )
     .join("");
 }
@@ -304,7 +300,6 @@ if (contactForm) {
         EMAILJS_CONFIG.TEMPLATE_ID,
         templateParams,
       );
-
       if (response.status === 200) {
         showFormStatus(
           `✅ Thank you ${name}! Your message has been sent. I'll get back to you soon.`,
@@ -315,7 +310,6 @@ if (contactForm) {
         throw new Error("Failed to send");
       }
     } catch (error) {
-      console.error("EmailJS Error:", error);
       showFormStatus(
         "❌ Failed to send. Please email me directly at revaldo.ferguson01@gmail.com",
         "error",
@@ -326,85 +320,13 @@ if (contactForm) {
 
 function showFormStatus(message, type) {
   if (!formStatus) return;
-
   formStatus.textContent = message;
   formStatus.className = `form-status ${type}`;
   formStatus.style.display = "block";
-
   setTimeout(() => {
     formStatus.style.display = "none";
   }, 5000);
 }
-
-// ========== VISITOR COUNTER ==========
-function updateVisitorCount() {
-  let visitors = localStorage.getItem("visitorCount");
-  if (!visitors) {
-    visitors = Math.floor(Math.random() * 1000) + 1247;
-    localStorage.setItem("visitorCount", visitors);
-  }
-  const countElement = document.getElementById("visitorCount");
-  if (countElement) {
-    animateNumber(countElement, 0, parseInt(visitors), 1000);
-  }
-}
-
-function animateNumber(element, start, end, duration) {
-  let startTimestamp = null;
-  const step = (timestamp) => {
-    if (!startTimestamp) startTimestamp = timestamp;
-    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-    element.textContent = Math.floor(progress * (end - start) + start);
-    if (progress < 1) window.requestAnimationFrame(step);
-  };
-  window.requestAnimationFrame(step);
-}
-
-// ========== ACTIVE NAVIGATION ==========
-function setActiveNav() {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-    const scrollPosition = window.scrollY + 100;
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionTop + sectionHeight
-      ) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
-    });
-  });
-}
-
-// ========== SMOOTH SCROLL ==========
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const targetId = this.getAttribute("href");
-    if (targetId === "#") return;
-
-    const target = document.querySelector(targetId);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  });
-});
 
 // ========== DARK MODE ==========
 const themeToggle = document.getElementById("themeToggle");
@@ -419,106 +341,34 @@ if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     const isDark = document.body.classList.contains("dark-mode");
-
-    if (isDark) {
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      localStorage.setItem("theme", "dark");
-    } else {
-      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      localStorage.setItem("theme", "light");
-    }
+    themeToggle.innerHTML = isDark
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 }
 
 // ========== BACK TO TOP ==========
 const backToTop = document.getElementById("backToTop");
-
 if (backToTop) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
+    backToTop.classList.toggle("show", window.scrollY > 300);
   });
-
   backToTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
-// ========== ANIMATE STATS ==========
-const statsSection = document.querySelector(".about-stats");
-let animated = false;
-
-function animateStats() {
-  if (animated) return;
-
-  const stats = document.querySelectorAll(".stat-number");
-  stats.forEach((stat) => {
-    const target = stat.textContent;
-    if (target.includes("+")) {
-      const number = parseInt(target);
-      animateNumber(stat, 0, number, 1000);
-    } else if (target.includes("%")) {
-      const number = parseInt(target);
-      animateNumber(stat, 0, number, 1000);
+// ========== SMOOTH SCROLL ==========
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const targetId = this.getAttribute("href");
+    if (targetId === "#") return;
+    const target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  });
-  animated = true;
-}
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateStats();
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.5 },
-);
-
-if (statsSection) {
-  observer.observe(statsSection);
-}
-
-// ========== SCROLL REVEAL ==========
-const revealElements = document.querySelectorAll(
-  ".about, .projects, .services, .contact",
-);
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.1 },
-);
-
-revealElements.forEach((el) => {
-  el.style.opacity = "0";
-  el.style.transform = "translateY(30px)";
-  el.style.transition = "all 0.6s ease-out";
-  revealObserver.observe(el);
-});
-
-// ========== SKILL TAGS ANIMATION ==========
-const skillTags = document.querySelectorAll(".skill-tag");
-skillTags.forEach((tag) => {
-  tag.addEventListener("mouseenter", () => {
-    tag.style.transform = "translateY(-2px)";
-  });
-  tag.addEventListener("mouseleave", () => {
-    tag.style.transform = "translateY(0)";
   });
 });
 
@@ -526,9 +376,5 @@ skillTags.forEach((tag) => {
 window.addEventListener("load", () => {
   renderProjects();
   initFilters();
-  updateVisitorCount();
-  setActiveNav();
-
-  console.log("🚀 Portfolio loaded with DevOps projects!");
-  console.log("✅ Total projects:", projectsData.length);
+  console.log("🚀 Portfolio loaded with 16 projects!");
 });
