@@ -6,9 +6,9 @@ const EMAILJS_CONFIG = {
   TEMPLATE_ID: "template_byj0l2n",
 };
 
-// ========== PROJECTS DATA - ALL 16 PROJECTS WITH IMAGES ==========
+// ========== PROJECTS DATA - 16 UNIQUE PROJECTS, NO DUPLICATES ==========
 const projectsData = [
-  // DEVOPS PROJECTS
+  // ===== DEVOPS PROJECTS (7 projects) =====
   {
     id: 14,
     title: "GitHub Actions CI/CD Pipeline",
@@ -94,7 +94,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project3-docker-app",
   },
 
-  // AUTH PROJECTS
+  // ===== AUTH PROJECTS (3 projects) =====
   {
     id: 1,
     title: "Glass Morphic Auth",
@@ -132,7 +132,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/neo-brutalist-login",
   },
 
-  // DASHBOARD PROJECTS
+  // ===== DASHBOARD PROJECTS (3 projects) =====
   {
     id: 4,
     title: "Glass Dashboard",
@@ -170,7 +170,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/IT-Services-Dashboard",
   },
 
-  // AI & CHAT PROJECTS
+  // ===== AI & CHAT PROJECTS (2 projects) =====
   {
     id: 5,
     title: "AI Real-Time Chat Bot",
@@ -196,7 +196,7 @@ const projectsData = [
     repo: "https://github.com/FergusonRevaldo25/classic-calculator-chat",
   },
 
-  // SHOWCASE PROJECTS
+  // ===== SHOWCASE PROJECTS (1 project) =====
   {
     id: 6,
     title: "Lamborghini Showcase",
@@ -376,5 +376,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 window.addEventListener("load", () => {
   renderProjects();
   initFilters();
-  console.log("🚀 Portfolio loaded with 16 projects!");
+  console.log("🚀 Portfolio loaded with 16 unique projects!");
+  console.log("✅ DevOps: 7 | Auth: 3 | Dashboard: 3 | AI: 2 | Showcase: 1");
 });
