@@ -6,14 +6,14 @@ const EMAILJS_CONFIG = {
   TEMPLATE_ID: "template_byj0l2n",
 };
 
-// ========== PROJECTS DATA - 16 UNIQUE PROJECTS ==========
+// ========== PROJECTS DATA - 17 PROJECTS ==========
 const projectsData = [
   // DEVOPS PROJECTS (7 projects)
   {
     id: 14,
     title: "GitHub Actions CI/CD Pipeline",
     category: "devops",
-    icon: "fa-brands fa-github-actions",
+    icon: "fa-brands fa-github",
     image: "assets/images/github-actions.jpg",
     badges: ["GitHub Actions", "CI/CD", "Python", "Automation"],
     description:
@@ -25,24 +25,24 @@ const projectsData = [
     id: 15,
     title: "Terraform Infrastructure as Code",
     category: "devops",
-    icon: "fa-brands fa-terraform",
+    icon: "fa-solid fa-gear",
     image: "assets/images/terraform.jpg",
     badges: ["Terraform", "Docker", "IaC", "Nginx"],
     description:
       "Infrastructure as Code using Terraform to provision Docker containers. Deploys Nginx web server with declarative configuration and state management.",
-    demo: "http://localhost:8080",
+    demo: "#",
     repo: "https://github.com/FergusonRevaldo25/terraform-docker-demo",
   },
   {
     id: 16,
     title: "Kubernetes with Minikube",
     category: "devops",
-    icon: "fa-brands fa-kubernetes",
+    icon: "fa-solid fa-cubes",
     image: "assets/images/kubernetes.jpg",
     badges: ["Kubernetes", "Minikube", "Pods", "Scaling"],
     description:
       "Local Kubernetes cluster with Minikube. Features 5-replica Nginx deployment, self-healing pods, NodePort service, and container orchestration.",
-    demo: "http://localhost:30080",
+    demo: "#",
     repo: "https://github.com/FergusonRevaldo25/kubernetes-minikube-demo",
   },
   {
@@ -54,7 +54,7 @@ const projectsData = [
     badges: ["Prometheus", "Grafana", "Docker", "Monitoring"],
     description:
       "Complete monitoring stack with Prometheus metrics collection and Grafana dashboards for real-time visualization.",
-    demo: "http://localhost:3000",
+    demo: "#",
     repo: "https://github.com/FergusonRevaldo25/prometheus-grafana-stack",
   },
   {
@@ -78,7 +78,7 @@ const projectsData = [
     badges: ["Nginx", "Linux", "HTML/CSS", "Reverse Proxy"],
     description:
       "Manual Linux server provisioning with Nginx hosting a static website. Configured security headers and reverse proxy routing.",
-    demo: "http://localhost:8080",
+    demo: "#",
     repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project2-nginx-website",
   },
   {
@@ -90,7 +90,7 @@ const projectsData = [
     badges: ["Docker", "Python", "Flask", "Multi-stage"],
     description:
       "Multi-stage Docker containerization of a Python Flask app. 84% size reduction (1.2GB → 194MB) with non-root user and health checks.",
-    demo: "http://localhost:5001",
+    demo: "#",
     repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project3-docker-app",
   },
   // AUTH PROJECTS (3 projects)
@@ -98,7 +98,7 @@ const projectsData = [
     id: 1,
     title: "Glass Morphic Auth",
     category: "auth",
-    icon: "fa-solid fa-shield-halbed",
+    icon: "fa-solid fa-shield-halved",
     image: "assets/images/glass.auth.jpg",
     badges: ["Authentication", "Security", "UI/UX"],
     description:
@@ -110,7 +110,7 @@ const projectsData = [
     id: 2,
     title: "Split-Screen Login",
     category: "auth",
-    icon: "fa-solid fa-split",
+    icon: "fa-solid fa-right-left",
     image: "assets/images/split.jpg",
     badges: ["Login", "Cloudflare", "Security"],
     description:
@@ -135,7 +135,7 @@ const projectsData = [
     id: 4,
     title: "Glass Dashboard",
     category: "dashboard",
-    icon: "fa-solid fa-chalkboard-user",
+    icon: "fa-solid fa-chart-pie",
     image: "assets/images/glassd.jpg",
     badges: ["Dashboard", "Analytics", "CRUD"],
     description:
@@ -167,7 +167,7 @@ const projectsData = [
     demo: "https://fergusonrevaldo25.github.io/IT-Services-Dashboard/",
     repo: "https://github.com/FergusonRevaldo25/IT-Services-Dashboard",
   },
-  // AI & CHAT PROJECTS (2 projects)
+  // AI & CHAT PROJECTS (3 projects - includes JARVIS)
   {
     id: 5,
     title: "AI Real-Time Chat Bot",
@@ -191,6 +191,18 @@ const projectsData = [
       "Classic calculator with natural language chat assistant for math operations.",
     demo: "https://fergusonrevaldo25.github.io/classic-calculator-chat",
     repo: "https://github.com/FergusonRevaldo25/classic-calculator-chat",
+  },
+  {
+    id: 18,
+    title: "J.A.R.V.I.S. AI Assistant",
+    category: "ai",
+    icon: "fa-solid fa-microchip",
+    image: "assets/images/jarvis.jpg",
+    badges: ["AI", "Voice", "Python", "Next.js", "FastAPI", "Groq", "Whisper"],
+    description:
+      "Iron Man-inspired AI voice assistant with holographic UI. Features voice commands, Spotify control, system automation, persistent memory, and real-time speech synthesis. Built with Next.js, FastAPI, Python, Groq LLM, and Whisper.",
+    demo: "https://github.com/FergusonRevaldo25/jarvis-platform",
+    repo: "https://github.com/FergusonRevaldo25/jarvis-platform",
   },
   // SHOWCASE PROJECTS (1 project)
   {
@@ -225,7 +237,7 @@ function renderProjects() {
     <div class="project-card" data-category="${project.category}">
       <div class="project-image">
         <img src="${project.image}" alt="${project.title}" 
-          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%236366f1\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'white\' font-family=\'Arial\' font-size=\'20\'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E'">
+          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'250\\' viewBox=\\'0 0 400 250\\'%3E%3Crect width=\\'400\\' height=\\'250\\' fill=\\'%236366f1\\'/%3E%3Ctext x=\\'50%25\\' y=\\'50%25\\' text-anchor=\\'middle\\' dy=\\'.3em\\' fill=\\'white\\' font-family=\\'Arial\\' font-size=\\'20\\'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E'">
         <div class="project-overlay">
           <div class="project-icon"><i class="${project.icon}"></i></div>
         </div>
@@ -372,5 +384,5 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 window.addEventListener("load", () => {
   renderProjects();
   initFilters();
-  console.log("Portfolio loaded with 16 unique projects!");
+  console.log("Portfolio loaded with 17 projects including J.A.R.V.I.S.!");
 });
