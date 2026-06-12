@@ -1,14 +1,10 @@
-// ========== EMAILJS CONFIGURATION ==========
 emailjs.init("byBeW_d1HrZ36CZVa");
-
 const EMAILJS_CONFIG = {
   SERVICE_ID: "service_fzpmxxm",
   TEMPLATE_ID: "template_byj0l2n",
 };
 
-// ========== PROJECTS DATA - 17 PROJECTS ==========
 const projectsData = [
-  // DEVOPS PROJECTS (7 projects)
   {
     id: 14,
     title: "GitHub Actions CI/CD Pipeline",
@@ -17,7 +13,7 @@ const projectsData = [
     image: "assets/images/github-actions.jpg",
     badges: ["GitHub Actions", "CI/CD", "Python", "Automation"],
     description:
-      "Automated CI/CD pipeline with GitHub Actions. Runs Python unit tests automatically on every push. Features workflow automation, test reporting, and continuous integration.",
+      "Automated CI/CD pipeline with GitHub Actions. Runs Python unit tests automatically on every push.",
     demo: "https://github.com/FergusonRevaldo25/python-cicd-demo",
     repo: "https://github.com/FergusonRevaldo25/python-cicd-demo",
   },
@@ -29,7 +25,7 @@ const projectsData = [
     image: "assets/images/terraform.jpg",
     badges: ["Terraform", "Docker", "IaC", "Nginx"],
     description:
-      "Infrastructure as Code using Terraform to provision Docker containers. Deploys Nginx web server with declarative configuration and state management.",
+      "Infrastructure as Code using Terraform to provision Docker containers with Nginx web server.",
     demo: "#",
     repo: "https://github.com/FergusonRevaldo25/terraform-docker-demo",
   },
@@ -41,7 +37,7 @@ const projectsData = [
     image: "assets/images/kubernetes.jpg",
     badges: ["Kubernetes", "Minikube", "Pods", "Scaling"],
     description:
-      "Local Kubernetes cluster with Minikube. Features 5-replica Nginx deployment, self-healing pods, NodePort service, and container orchestration.",
+      "Local Kubernetes cluster with Minikube featuring 5-replica Nginx deployment and self-healing pods.",
     demo: "#",
     repo: "https://github.com/FergusonRevaldo25/kubernetes-minikube-demo",
   },
@@ -53,7 +49,7 @@ const projectsData = [
     image: "assets/images/prometheus-grafana.jpg",
     badges: ["Prometheus", "Grafana", "Docker", "Monitoring"],
     description:
-      "Complete monitoring stack with Prometheus metrics collection and Grafana dashboards for real-time visualization.",
+      "Complete monitoring stack with Prometheus metrics collection and Grafana dashboards.",
     demo: "#",
     repo: "https://github.com/FergusonRevaldo25/prometheus-grafana-stack",
   },
@@ -65,9 +61,9 @@ const projectsData = [
     image: "assets/images/log-archiver.jpg",
     badges: ["Bash", "Cron", "Linux", "Automation"],
     description:
-      "Bash script that automatically compresses logs with timestamps, archives them, and schedules daily backups via cron. Deletes logs older than 7 days.",
+      "Bash script that compresses logs with timestamps, archives them, and schedules daily backups via cron.",
     demo: "#",
-    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project1-log-archiver",
+    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio",
   },
   {
     id: 11,
@@ -75,11 +71,11 @@ const projectsData = [
     category: "devops",
     icon: "fa-solid fa-server",
     image: "assets/images/nginx.jpg",
-    badges: ["Nginx", "Linux", "HTML/CSS", "Reverse Proxy"],
+    badges: ["Nginx", "Linux", "HTML/CSS"],
     description:
-      "Manual Linux server provisioning with Nginx hosting a static website. Configured security headers and reverse proxy routing.",
+      "Manual Linux server provisioning with Nginx hosting a static website with security headers.",
     demo: "#",
-    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project2-nginx-website",
+    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio",
   },
   {
     id: 12,
@@ -87,13 +83,12 @@ const projectsData = [
     category: "devops",
     icon: "fa-brands fa-docker",
     image: "assets/images/docker.jpg",
-    badges: ["Docker", "Python", "Flask", "Multi-stage"],
+    badges: ["Docker", "Python", "Flask"],
     description:
-      "Multi-stage Docker containerization of a Python Flask app. 84% size reduction (1.2GB → 194MB) with non-root user and health checks.",
+      "Multi-stage Docker containerization of a Python Flask app with 84% size reduction.",
     demo: "#",
-    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio/tree/main/project3-docker-app",
+    repo: "https://github.com/FergusonRevaldo25/nqf5-devops-portfolio",
   },
-  // AUTH PROJECTS (3 projects)
   {
     id: 1,
     title: "Glass Morphic Auth",
@@ -130,7 +125,6 @@ const projectsData = [
     demo: "https://fergusonrevaldo25.github.io/neo-brutalist-login",
     repo: "https://github.com/FergusonRevaldo25/neo-brutalist-login",
   },
-  // DASHBOARD PROJECTS (3 projects)
   {
     id: 4,
     title: "Glass Dashboard",
@@ -167,7 +161,6 @@ const projectsData = [
     demo: "https://fergusonrevaldo25.github.io/IT-Services-Dashboard/",
     repo: "https://github.com/FergusonRevaldo25/IT-Services-Dashboard",
   },
-  // AI & CHAT PROJECTS (3 projects - includes JARVIS)
   {
     id: 5,
     title: "AI Real-Time Chat Bot",
@@ -200,11 +193,10 @@ const projectsData = [
     image: "assets/images/jarvis.jpg",
     badges: ["AI", "Voice", "Python", "Next.js", "FastAPI", "Groq", "Whisper"],
     description:
-      "Iron Man-inspired AI voice assistant with holographic UI. Features voice commands, Spotify control, system automation, persistent memory, and real-time speech synthesis. Built with Next.js, FastAPI, Python, Groq LLM, and Whisper.",
+      "Iron Man-inspired AI voice assistant with holographic UI. Voice commands, Spotify control, system automation, persistent memory, and real-time speech synthesis.",
     demo: "https://github.com/FergusonRevaldo25/jarvis-platform",
     repo: "https://github.com/FergusonRevaldo25/jarvis-platform",
   },
-  // SHOWCASE PROJECTS (1 project)
   {
     id: 6,
     title: "Lamborghini Showcase",
@@ -219,38 +211,30 @@ const projectsData = [
   },
 ];
 
-// ========== FILTER FUNCTIONALITY ==========
 let currentFilter = "all";
 
 function renderProjects() {
-  const projectsGrid = document.getElementById("projectsGrid");
-  if (!projectsGrid) return;
-
-  const filteredProjects =
+  const grid = document.getElementById("projectsGrid");
+  if (!grid) return;
+  const filtered =
     currentFilter === "all"
       ? projectsData
-      : projectsData.filter((project) => project.category === currentFilter);
-
-  projectsGrid.innerHTML = filteredProjects
+      : projectsData.filter((p) => p.category === currentFilter);
+  grid.innerHTML = filtered
     .map(
-      (project) => `
-    <div class="project-card" data-category="${project.category}">
+      (p) => `
+    <div class="project-card" data-category="${p.category}">
       <div class="project-image">
-        <img src="${project.image}" alt="${project.title}" 
-          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'250\\' viewBox=\\'0 0 400 250\\'%3E%3Crect width=\\'400\\' height=\\'250\\' fill=\\'%236366f1\\'/%3E%3Ctext x=\\'50%25\\' y=\\'50%25\\' text-anchor=\\'middle\\' dy=\\'.3em\\' fill=\\'white\\' font-family=\\'Arial\\' font-size=\\'20\\'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E'">
-        <div class="project-overlay">
-          <div class="project-icon"><i class="${project.icon}"></i></div>
-        </div>
+        <img src="${p.image}" alt="${p.title}" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27250%27%3E%3Crect width=%27400%27 height=%27250%27 fill=%27%236366f1%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-family=%27Arial%27 font-size=%2720%27%3E${encodeURIComponent(p.title)}%3C/text%3E%3C/svg%3E'">
+        <div class="project-overlay"><div class="project-icon"><i class="${p.icon}"></i></div></div>
       </div>
       <div class="project-info">
-        <h3>${project.title}</h3>
-        <div class="project-badges">
-          ${project.badges.map((badge) => `<span class="badge">${badge}</span>`).join("")}
-        </div>
-        <p>${project.description}</p>
+        <h3>${p.title}</h3>
+        <div class="project-badges">${p.badges.map((b) => `<span class="badge">${b}</span>`).join("")}</div>
+        <p>${p.description}</p>
         <div class="project-links">
-          ${project.demo !== "#" ? `<a href="${project.demo}" target="_blank">Live Demo →</a>` : '<span class="demo-soon">Local Demo</span>'}
-          <a href="${project.repo}" target="_blank">Source Code</a>
+          ${p.demo !== "#" ? `<a href="${p.demo}" target="_blank">Live Demo →</a>` : '<span class="demo-soon">Local Demo</span>'}
+          <a href="${p.repo}" target="_blank">Source Code</a>
         </div>
       </div>
     </div>
@@ -260,10 +244,11 @@ function renderProjects() {
 }
 
 function initFilters() {
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  filterBtns.forEach((btn) => {
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      filterBtns.forEach((b) => b.classList.remove("active"));
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       currentFilter = btn.getAttribute("data-filter");
       renderProjects();
@@ -271,42 +256,28 @@ function initFilters() {
   });
 }
 
-// ========== CONTACT FORM ==========
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
-
 if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-
     const name = document.getElementById("name")?.value;
     const email = document.getElementById("email")?.value;
     const message = document.getElementById("message")?.value;
-
     if (!name || !email || !message) {
       showFormStatus("Please fill in all fields", "error");
       return;
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       showFormStatus("Please enter a valid email address", "error");
       return;
     }
-
     showFormStatus("Sending message...", "info");
-
-    const templateParams = {
-      from_name: name,
-      reply_email: email,
-      message_html: message,
-    };
-
     try {
       const response = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams,
+        { from_name: name, reply_email: email, message_html: message },
       );
       if (response.status === 200) {
         showFormStatus(
@@ -314,18 +285,15 @@ if (contactForm) {
           "success",
         );
         contactForm.reset();
-      } else {
-        throw new Error("Failed to send");
-      }
+      } else throw new Error("Failed");
     } catch (error) {
       showFormStatus(
-        "Failed to send. Please email me directly at revaldo.ferguson01@gmail.com",
+        "Failed to send. Email me at revaldo.ferguson01@gmail.com",
         "error",
       );
     }
   });
 }
-
 function showFormStatus(message, type) {
   if (!formStatus) return;
   formStatus.textContent = message;
@@ -336,15 +304,11 @@ function showFormStatus(message, type) {
   }, 5000);
 }
 
-// ========== DARK MODE ==========
 const themeToggle = document.getElementById("themeToggle");
-const savedTheme = localStorage.getItem("theme");
-
-if (savedTheme === "dark") {
+if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark-mode");
   if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 }
-
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
@@ -356,7 +320,6 @@ if (themeToggle) {
   });
 }
 
-// ========== BACK TO TOP ==========
 const backToTop = document.getElementById("backToTop");
 if (backToTop) {
   window.addEventListener("scroll", () => {
@@ -367,12 +330,9 @@ if (backToTop) {
   });
 }
 
-// ========== SMOOTH SCROLL ==========
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    const targetId = this.getAttribute("href");
-    if (targetId === "#") return;
-    const target = document.querySelector(targetId);
+    const target = document.querySelector(this.getAttribute("href"));
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -380,9 +340,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// ========== INITIALIZE ==========
 window.addEventListener("load", () => {
   renderProjects();
   initFilters();
-  console.log("Portfolio loaded with 17 projects including J.A.R.V.I.S.!");
 });
